@@ -1,0 +1,21 @@
+mutation CreateProfile(
+  $user: String!
+  $name: String!
+	$dateOfBirth: String!
+) {
+  createUserProfile(
+    input: {
+      user: $user
+      name: $name
+			dateOfBirth: $dateOfBirth,
+      isOwnerProfile: false
+      isDefaultProfile: false
+    }
+  ) {
+    userProfile {
+      id
+      initials
+    }
+  }
+}
+

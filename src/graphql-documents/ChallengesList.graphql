@@ -1,0 +1,24 @@
+query ChallengesList($forChildren: Boolean!) {
+  challengeTypes(isForChildren: $forChildren) {
+    edges {
+      node {
+        id
+        isForChildren
+        name
+        imageFullPath
+        iconFullPath
+        iconFullPathWhite
+        targets {
+          edges {
+            node {
+							id
+              value
+              metric
+              displayName
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+query PersonalisedMedalPricing {
+  challengeEntryOptions {
+    edges {
+      node {
+        id
+        forChildren
+        normalMedalPricing
+        personalisedMedalPricing
+        personalisedMedalPricingDifference
+      }
+    }
+  }
+}
+

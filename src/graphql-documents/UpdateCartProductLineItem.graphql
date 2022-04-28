@@ -1,0 +1,46 @@
+mutation UpdateCartProductLineItem(
+  $productLineInput: updateCartProductLineItemInput!
+  $cartInput: updateCartInput!
+) {
+  updateCart(input: $cartInput) {
+    cart {
+      id
+      checkoutUrl
+      priceBreakdown
+      productLineItems {
+        edges {
+          node {
+            id
+            quantity
+            variantId
+          }
+        }
+      }
+      address {
+        address1
+        address2
+        city
+        province
+        zip
+        country
+      }
+      entryLineItems {
+        edges {
+          node {
+            id
+            challengeTarget {
+              displayName
+            }
+          }
+        }
+      }
+    }
+  }
+  updateCartProductLineItem(input: $productLineInput) {
+    cartProductLineItem {
+      id
+      variantId
+      quantity
+    }
+  }
+}

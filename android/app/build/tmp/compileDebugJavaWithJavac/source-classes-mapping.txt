@@ -1,0 +1,16 @@
+com/raceatyourpace/generated/BasePackageList.java
+ com.raceatyourpace.generated.BasePackageList
+com/raceatyourpace/BuildConfig.java
+ com.raceatyourpace.BuildConfig
+com/raceatyourpace/MainApplication.java
+ com.raceatyourpace.MainApplication
+ com.raceatyourpace.MainApplication$1
+com/raceatyourpace/MainActivity.java
+ com.raceatyourpace.MainActivity
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
+com/raceatyourpace/ReactNativeFlipper.java
+ com.raceatyourpace.ReactNativeFlipper
+ com.raceatyourpace.ReactNativeFlipper$1
+ com.raceatyourpace.ReactNativeFlipper$2
+ com.raceatyourpace.ReactNativeFlipper$2$1

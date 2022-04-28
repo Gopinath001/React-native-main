@@ -1,0 +1,17 @@
+query AnnualPassPurchasables {
+	annualPassPurchasables {
+    edges {
+      node {
+        profile {
+            id
+            name
+						initials
+        }
+        year
+        child
+        prices
+      }
+    }
+  }
+}
+

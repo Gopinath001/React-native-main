@@ -1,0 +1,25 @@
+#!/bin/sh
+
+set -eof
+
+# Remove existing .env and replace with one build from system environment variables
+rm ../.env || true # Don't error the whole build if there's no .env to remove.
+
+cat >../.env <<EOL
+NODE_ENV=production
+CORE_API_ROOT=${CORE_API_ROOT}
+CMS_API_ROOT=${CMS_API_ROOT}
+WEB_ROOT_URI=${WEB_ROOT_URI}
+APP_PROTOCOL=${APP_PROTOCOL}
+
+AWS_REGION=${AWS_REGION}
+COGNITO_USER_POOL_ID=${COGNITO_USER_POOL_ID}
+COGNITO_USER_POOL_WEB_ID=${COGNITO_USER_POOL_WEB_ID}
+COGNITO_AUTH_BASE=${COGNITO_AUTH_BASE}
+AWS_CLIENT_ID=${AWS_CLIENT_ID}
+AWS_CLIENT_SECRET=${AWS_CLIENT_SECRET}
+COOKIE_SIGNING_KEY=${COOKIE_SIGNING_KEY}
+BUGSNAG_API_KEY=${BUGSNAG_API_KEY}
+ENV_PATH=`pwd`
+EOL
+

@@ -1,0 +1,35 @@
+query ChallengeEntriesByProfile {
+  userProfiles {
+    edges {
+      node {
+        id
+        name
+        displayName
+        initials
+        isOwnerProfile
+        challengeEntries {
+          edges {
+            node {
+              id
+              year
+              month
+							targetValue
+              totalProgress
+              totalProgressPercentage
+              target {
+                type {
+                  iconFullPath
+                  iconFullPathWhite
+                  name
+                }
+                value
+                displayName
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

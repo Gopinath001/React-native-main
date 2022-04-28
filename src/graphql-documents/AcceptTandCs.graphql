@@ -1,0 +1,7 @@
+mutation AcceptTandC($input:updateUserInput!) {
+  updateUser(input: $input) {
+    user {
+      tosAccepted
+    }
+  }
+}

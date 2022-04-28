@@ -1,0 +1,20 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": "../",
+		"module": "CommonJS",
+		"types": ["node"],
+		"noEmit": false,
+		"outDir": "../../dist",
+		"skipLibCheck": true,
+		"jsx": "react-jsx",
+		"moduleResolution": "node",
+		"typeRoots": ["../@types", "../../../../node_modules/@types", "../../../../types"],
+		"jsxImportSource": "@emotion/react",
+		"plugins": [
+			{
+        "transform": "typescript-loadable-components-plugin"
+      }
+		]
+	}
+}

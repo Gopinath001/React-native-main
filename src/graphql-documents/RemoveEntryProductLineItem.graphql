@@ -1,0 +1,9 @@
+mutation RemoveCartEntryLineItem(
+  $cartEntryLineItemId: ID!
+) {
+  deleteCartEntryLineItem( input: { id: $cartEntryLineItemId }) {
+    cartEntryLineItem {
+      id
+    }
+  }
+}

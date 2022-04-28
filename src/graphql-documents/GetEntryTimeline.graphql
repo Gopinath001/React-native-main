@@ -1,0 +1,44 @@
+query GetEntryTimeline($entry_uuid: String!, $entry_profile_uuid: String!) {
+  challengeEntryProgresses(
+    entry_uuid: $entry_uuid
+    entry_profile_uuid: $entry_profile_uuid
+    exists: { discarded: false }
+    order: { evidenceDate: "DESC" }
+  ) {
+    edges {
+      node {
+        id
+        progressString
+        created
+        createdString
+        entry {
+          target {
+            displayName
+            value
+            type {
+							name
+              iconFullPath
+              iconFullPathWhite
+            }
+          }
+          personalisedMedal
+          totalProgress
+          totalProgressPercentage
+          profile {
+            initials
+          }
+        }
+        evidenceDate
+
+        evidence {
+          edges {
+            node {
+              id
+              contentUrl
+            }
+          }
+        }
+      }
+    }
+  }
+}

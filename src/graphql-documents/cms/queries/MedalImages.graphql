@@ -1,0 +1,13 @@
+query MedalImages($year: Int!, $month: Int!, $type: String!) {
+  medals(where: { Year: $year, Month: $month, Type: $type }) {
+    id
+    Year
+    Month
+    Type
+    Image {
+      alternativeText
+      url
+    }
+  }
+}
+

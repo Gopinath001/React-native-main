@@ -1,0 +1,25 @@
+overwrite: true
+generates:
+  src/@rap-api/core.tsx:
+    schema: "https://platform-staging.raceatyourpace.browserhosting.com/sdl.graphql"
+    documents: "src/graphql-documents/*.graphql"
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-resolvers"
+      - "typescript-react-apollo"
+  src/@rap-api/fragments.ts:
+    schema: "https://platform-staging.raceatyourpace.browserhosting.com/sdl.graphql"
+    documents: "src/graphql-documents/*.graphql"
+    plugins:
+      - "fragment-matcher"
+
+  src/@rap-api/cms.tsx:
+    schema: "./src/graphql-documents/cms/cms.graphql"
+    documents: "src/graphql-documents/cms/queries/*.graphql"
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-resolvers"
+      - "typescript-react-apollo"
+      - "fragment-matcher"

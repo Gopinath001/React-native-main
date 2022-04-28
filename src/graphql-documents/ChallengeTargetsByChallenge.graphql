@@ -1,0 +1,19 @@
+query ChallengeTargetsByChallenge($id: ID!) {
+  challengeType(id: $id) {
+    id
+    name
+    imageFullPath
+    iconFullPath
+    iconFullPathWhite
+    targets {
+      edges {
+        node {
+          id
+          value
+          metric
+          displayName
+        }
+      }
+    }
+  }
+}

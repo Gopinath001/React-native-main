@@ -1,0 +1,41 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { Logo } from "components/Logo"
+import { Button } from "components/Buttons"
+
+<Meta title="API Reference/Buttons" />
+
+<Logo />
+<br />
+<br />
+
+# Buttons
+
+There are a few types of buttons available in the RAP design system.
+
+# Base
+
+The base button comes in 3 flavours.
+
+## Primary Brand
+
+<Button variant={"primary"} onPress={console.log}>Primary colour button</Button>
+
+```typescript
+<Button variant={"primary"} onPress={console.log}>Primary colour button</Button>
+```
+
+## Secondary Brand
+
+<Button variant={"secondary"} onPress={console.log}>Secondary colour button</Button>
+
+```typescript
+<Button variant={"secondary"} onPress={console.log}>Secondary colour button</Button>
+```
+
+## No Brand
+
+<Button variant={"none"} onPress={console.log}>No colour button</Button>
+
+```typescript
+<Button variant={"none"} onPress={console.log}>No colour button</Button>
+```

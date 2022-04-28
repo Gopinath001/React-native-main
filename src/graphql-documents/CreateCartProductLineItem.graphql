@@ -1,0 +1,11 @@
+mutation CreateCartProductLineItem($input: createCartProductLineItemInput!) {
+  createCartProductLineItem(input: $input) {
+    cartProductLineItem {
+      cart {
+        id
+      }
+      quantity
+      variantId
+    }
+  }
+}

@@ -1,0 +1,6 @@
+**/dist/**
+**/metro.config.js
+**/build/**
+src/graphql/**
+src/@rap-theme.ts
+src/@rap-api/**

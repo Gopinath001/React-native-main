@@ -1,0 +1,15 @@
+query AvailableEntryMonths {
+  availableEntryMonths {
+    edges {
+      node {
+        year
+        month
+        default
+				lateEntry
+        monthName
+        displayName
+      }
+    }
+  }
+}
+

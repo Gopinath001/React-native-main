@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Race_At_Your_Pace.iml" filepath="$PROJECT_DIR$/.idea/modules/Race_At_Your_Pace.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1462305106/Race_At_Your_Pace.amazon-cognito-identity-js.iml" filepath="$PROJECT_DIR$/.idea/modules/1462305106/Race_At_Your_Pace.amazon-cognito-identity-js.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Race_At_Your_Pace.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Race_At_Your_Pace.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1424431428/Race_At_Your_Pace.expo-file-system.iml" filepath="$PROJECT_DIR$/.idea/modules/1424431428/Race_At_Your_Pace.expo-file-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1462385941/Race_At_Your_Pace.expo-font.iml" filepath="$PROJECT_DIR$/.idea/modules/-1462385941/Race_At_Your_Pace.expo-font.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/324970849/Race_At_Your_Pace.expo-image-loader.iml" filepath="$PROJECT_DIR$/.idea/modules/324970849/Race_At_Your_Pace.expo-image-loader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-604517695/Race_At_Your_Pace.expo-modules-core.iml" filepath="$PROJECT_DIR$/.idea/modules/-604517695/Race_At_Your_Pace.expo-modules-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2037711422/Race_At_Your_Pace.react-native-async-storage_async-storage.iml" filepath="$PROJECT_DIR$/.idea/modules/2037711422/Race_At_Your_Pace.react-native-async-storage_async-storage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/140525487/Race_At_Your_Pace.react-native-background-timer.iml" filepath="$PROJECT_DIR$/.idea/modules/140525487/Race_At_Your_Pace.react-native-background-timer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1051837296/Race_At_Your_Pace.react-native-community_checkbox.iml" filepath="$PROJECT_DIR$/.idea/modules/-1051837296/Race_At_Your_Pace.react-native-community_checkbox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1561136670/Race_At_Your_Pace.react-native-community_netinfo.iml" filepath="$PROJECT_DIR$/.idea/modules/1561136670/Race_At_Your_Pace.react-native-community_netinfo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/684034355/Race_At_Your_Pace.react-native-fast-image.iml" filepath="$PROJECT_DIR$/.idea/modules/684034355/Race_At_Your_Pace.react-native-fast-image.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-682157465/Race_At_Your_Pace.react-native-flipper.iml" filepath="$PROJECT_DIR$/.idea/modules/-682157465/Race_At_Your_Pace.react-native-flipper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1741498761/Race_At_Your_Pace.react-native-image-picker.iml" filepath="$PROJECT_DIR$/.idea/modules/1741498761/Race_At_Your_Pace.react-native-image-picker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/476794228/Race_At_Your_Pace.react-native-inappbrowser-reborn.iml" filepath="$PROJECT_DIR$/.idea/modules/476794228/Race_At_Your_Pace.react-native-inappbrowser-reborn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2049561263/Race_At_Your_Pace.react-native-linear-gradient.iml" filepath="$PROJECT_DIR$/.idea/modules/2049561263/Race_At_Your_Pace.react-native-linear-gradient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1506905554/Race_At_Your_Pace.react-native-localize.iml" filepath="$PROJECT_DIR$/.idea/modules/1506905554/Race_At_Your_Pace.react-native-localize.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/569979432/Race_At_Your_Pace.react-native-picker_picker.iml" filepath="$PROJECT_DIR$/.idea/modules/569979432/Race_At_Your_Pace.react-native-picker_picker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/117179334/Race_At_Your_Pace.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/117179334/Race_At_Your_Pace.react-native-safe-area-context.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1391385275/Race_At_Your_Pace.react-native-svg.iml" filepath="$PROJECT_DIR$/.idea/modules/1391385275/Race_At_Your_Pace.react-native-svg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/495099856/Race_At_Your_Pace.react-native-webview.iml" filepath="$PROJECT_DIR$/.idea/modules/495099856/Race_At_Your_Pace.react-native-webview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-728195242/Race_At_Your_Pace.unimodules-app-loader.iml" filepath="$PROJECT_DIR$/.idea/modules/-728195242/Race_At_Your_Pace.unimodules-app-loader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/388742358/Race_At_Your_Pace.unimodules-core.iml" filepath="$PROJECT_DIR$/.idea/modules/388742358/Race_At_Your_Pace.unimodules-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1405514530/Race_At_Your_Pace.unimodules-react-native-adapter.iml" filepath="$PROJECT_DIR$/.idea/modules/-1405514530/Race_At_Your_Pace.unimodules-react-native-adapter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1970449816/Race_At_Your_Pace.unimodules-task-manager-interface.iml" filepath="$PROJECT_DIR$/.idea/modules/-1970449816/Race_At_Your_Pace.unimodules-task-manager-interface.iml" />
+    </modules>
+  </component>
+</project>

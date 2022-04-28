@@ -1,0 +1,24 @@
+mutation CreateChallengeEntryProgress($input: createChallengeEntryProgressInput!) {
+  createChallengeEntryProgress(input: $input) {
+    challengeEntryProgress {
+      id
+      entry {
+        id
+        completed
+        displayName
+      }
+      progress
+      evidenceDate
+      evidence {
+        edges {
+          node {
+            id
+            contentUrl
+            created
+          }
+        }
+      }
+      progressString
+    }
+  }
+}

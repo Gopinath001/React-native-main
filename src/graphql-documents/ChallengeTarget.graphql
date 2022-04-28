@@ -1,0 +1,8 @@
+query GetChallengeTarget($id: ID!) {
+  challengeTarget(id: $id) {
+    id
+    value
+    metric
+    displayName
+  }
+}

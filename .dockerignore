@@ -1,0 +1,9 @@
+node_modules
+tags
+tags.lock
+./packages/mobile
+dist
+build
+mobile
+.git
+coverage

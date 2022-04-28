@@ -1,0 +1,8 @@
+mutation UploadEvidence($input: uploadMediaObjectInput!) {
+  uploadMediaObject(input: $input) {
+    mediaObject {
+      id
+      contentUrl
+    }
+  }
+}

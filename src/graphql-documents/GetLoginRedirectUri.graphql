@@ -1,0 +1,12 @@
+query GetLoginRedirectUri {
+  publicConfigs(key:"oauth2_login_url"){
+    edges{
+      node{
+        id
+        key
+        value
+      }
+    }
+  }
+}
+

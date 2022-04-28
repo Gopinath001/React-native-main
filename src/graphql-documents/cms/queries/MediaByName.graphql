@@ -1,0 +1,9 @@
+query MediaByName($name: String!) {
+  publicMedias(where: { name: $name }) {
+    name
+    source {
+      url
+			alternativeText
+    }
+  }
+}

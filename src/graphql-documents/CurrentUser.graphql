@@ -1,0 +1,87 @@
+query CurrentUser {
+  users {
+    edges {
+      node {
+        id
+        email
+        requirements
+        tosAccepted
+				currencyPreference
+        countryIso
+        addresses {
+          edges {
+            node {
+              address1
+              address2
+              city
+              province
+              phone
+              zip
+              country
+            }
+          }
+        }
+        ownerProfile {
+          id
+          name
+          initials
+          isDefaultProfile
+          isOwnerProfile
+          ageInYears
+          dateOfBirth
+          gender {
+            id
+            name
+          }
+          requirements
+          isChild
+          addresses {
+            edges {
+              node {
+                address1
+                address2
+                city
+                province
+                phone
+                zip
+                country
+              }
+            }
+          }
+        }
+        profiles {
+          edges {
+            node {
+              id
+              name
+              initials
+              requirements
+              dateOfBirth
+              gender {
+                id
+                name
+              }
+              addresses {
+                edges {
+                  node {
+                    address1
+                    address2
+                    city
+                    province
+                    phone
+                    zip
+                    country
+                  }
+                }
+              }
+              isDefaultProfile
+              isOwnerProfile
+              ageInYears
+              isChild
+            }
+          }
+        }
+      }
+    }
+  }
+}

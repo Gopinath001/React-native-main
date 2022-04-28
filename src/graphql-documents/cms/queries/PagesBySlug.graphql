@@ -1,0 +1,7 @@
+query PagesBySlug($slug: String!) {
+	pages(where: {Slug: $slug}) {
+		id
+		Title
+		Content
+	}
+}

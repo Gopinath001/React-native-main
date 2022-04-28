@@ -1,0 +1,20 @@
+mutation CreateCartEntryLineItem($input: createCartEntryLineItemInput!) {
+  createCartEntryLineItem(input: $input) {
+    cartEntryLineItem {
+      id
+  		profile {
+        id
+      }
+      challengeTarget {
+        id
+      }
+      year
+      month
+      withMedal
+      personalisedMedal
+      personalisedMedalTargetValue
+      dateOfBirth
+    }
+  }
+}
+

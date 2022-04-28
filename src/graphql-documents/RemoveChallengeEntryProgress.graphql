@@ -1,0 +1,9 @@
+mutation RemoveChallengeEntryProgress(
+  $challengeEntryProgressId: ID!
+) {
+  deleteChallengeEntryProgress( input: { id: $challengeEntryProgressId }) {
+    challengeEntryProgress { 
+      id
+    }
+  } 
+}

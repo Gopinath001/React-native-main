@@ -1,0 +1,10 @@
+query EntryValueById($id: ID!) {
+  challengeEntry(id: $id) {
+    target {
+      value
+			type {
+				name
+			}
+    }
+  }
+}

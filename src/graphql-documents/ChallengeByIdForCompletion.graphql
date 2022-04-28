@@ -1,0 +1,22 @@
+query ChallengeByIdForCompletion($id: ID!) {
+  challengeEntry(id: $id) {
+    personalisedMedal
+    personalisedMedalTargetValue
+    completed
+		month
+		year
+    target {
+      type {
+				name
+        iconFullPath
+        iconFullPathWhite
+      }
+			value
+			metric
+      displayName
+    }
+		targetValue
+    totalProgress
+    totalProgressPercentage
+  }
+}

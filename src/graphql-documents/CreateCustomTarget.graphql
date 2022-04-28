@@ -1,0 +1,10 @@
+mutation CreateCustomTarget($entryId: ID!, $targetValue: Int!) {
+  updateChallengeEntry(
+    input: { id: $entryId, overrideChallengeTargetValue: $targetValue }
+  ) {
+    challengeEntry {
+      id
+      overrideChallengeTargetValue
+    }
+  }
+}

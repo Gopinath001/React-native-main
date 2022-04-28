@@ -1,0 +1,16 @@
+mutation UpdateChallengeEntryProgress($input: updateChallengeEntryProgressInput!) {
+  updateChallengeEntryProgress(input:$input) {
+    challengeEntryProgress {
+      id
+      progress
+      evidence {
+        edges {
+          node {
+            id
+          }
+        }
+      }	 
+      evidenceDate
+    }
+  }
+}  

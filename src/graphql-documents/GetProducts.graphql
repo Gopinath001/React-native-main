@@ -1,0 +1,18 @@
+query GetProducts($monthFilter: String) {
+  products(MonthFilter_month: $monthFilter) {
+    edges {
+      node {
+        id
+        title
+        descriptionHtml
+        vendor
+        productType
+        tags
+        variants
+        images
+				options
+				collections
+      }
+    }
+  }
+}

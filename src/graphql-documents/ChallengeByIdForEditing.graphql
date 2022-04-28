@@ -1,0 +1,32 @@
+query ChallengeByIdForEditing($id: ID!) {
+  challengeEntry(id: $id) {
+    id
+    personalisedMedal
+    personalisedMedalTargetValue
+    completed
+    year
+    target {
+      type {
+        name
+        iconFullPath
+        iconFullPathWhite
+        targets {
+          edges {
+            node {
+              id
+              value
+              metric
+              displayName
+            }
+          }
+        }
+      }
+      id
+      value
+      metric
+      displayName
+    }
+    totalProgress
+    totalProgressPercentage
+  }
+}

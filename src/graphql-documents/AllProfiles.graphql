@@ -1,0 +1,13 @@
+query AllProfiles {
+  userProfiles {
+    edges {
+      node {
+        id
+        initials
+        isChild
+        name
+        dateOfBirth
+      }
+    }
+  }
+}

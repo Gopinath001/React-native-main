@@ -1,0 +1,17 @@
+query Addresses {
+  userAddresses(archived: false) {
+    edges {
+      node {
+        id
+        address1
+        address2
+        city
+        province
+        zip
+        country
+        archived
+      }
+    }
+  }
+}
+

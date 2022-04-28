@@ -1,0 +1,10 @@
+mutation CreateAnnualPassCart ($input: createAnnualPassCartInput!) {
+  createAnnualPassCart(input: $input) {
+    annualPassCart {
+        id
+        checkoutUrl
+        priceBreakdown
+				syncWithShopify
+    }
+  }
+}

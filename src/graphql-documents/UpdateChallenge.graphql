@@ -1,0 +1,13 @@
+mutation UpdateChallenge($input: updateChallengeEntryInput!) {
+  updateChallengeEntry(input:$input) {
+    challengeEntry {
+      id
+      target {
+        id
+        value
+        metric
+        displayName
+      }
+    }
+  }
+}

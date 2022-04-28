@@ -1,0 +1,28 @@
+mutation CreateCart($input: createCartInput!) {
+  createCart(input: $input) {
+    cart {
+      id
+      entryLineItems {
+        edges {
+          node {
+            id
+            personalisedMedal
+            withMedal
+            personalisedMedalTargetValue
+            yearMonthString
+          }
+        }
+      }
+      productLineItems {
+        edges {
+          node {
+            id
+            quantity
+            variantId
+
+          }
+        }
+      }
+    }
+  }
+}

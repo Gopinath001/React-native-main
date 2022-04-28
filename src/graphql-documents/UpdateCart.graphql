@@ -1,0 +1,14 @@
+mutation UpdateCart($input: updateCartInput!) {
+  updateCart(input: $input) {
+    cart {
+      id
+      entryLineItems {
+        edges {
+          node {
+            yearMonthString
+          }
+        }
+      }
+    }
+  }
+}

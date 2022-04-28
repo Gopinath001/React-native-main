@@ -1,0 +1,56 @@
+{
+  "color": {
+		"brand": {
+			"primary": {
+				"value": "#48B8DB",
+				"comment": "Brand primary colour.",
+				"category": "color"
+			},
+			"alternative": {
+				"value": "#DE2A74",
+				"comment": "Brand secondary colour",
+				"category": "color"
+			}
+		},
+		"background": {
+			"primary": {
+				"value": "#ECF4F5",
+				"category": "color"
+			},
+			"secondary": {
+				"value": "#FFFFFF",
+				"category": "color"
+			},
+			"header": {
+				"value": "#eef4f6",
+				"category": "color"
+			}
+		},
+		"borders": {
+			"value": "#ACBCC2"
+		},
+		"pairings": {
+			"progress": {
+				"background": {
+					"value": "#ABBCC2",
+					"category": "color"
+				},
+				"foreground": {
+					"value": "#7DE4A9",
+					"category": "color"
+
+				}
+			},
+			"lightOnDark": {
+				"background": {
+					"value": "#02304B",
+					"category": "color"
+				},
+				"foreground": {
+					"value": "#FFFFFF",
+					"category": "color"
+				}
+			}
+		}
+  }
+}

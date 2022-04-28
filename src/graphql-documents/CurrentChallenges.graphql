@@ -1,0 +1,40 @@
+query CurrentChallenges($closed: Boolean!) {
+  userProfiles {
+    edges {
+      node {
+        id
+        name
+        displayName
+        initials
+        challengeEntries(exists: { closed: $closed }, order: { month: "ASC" }) {
+          edges {
+            node {
+              id
+              year
+              month
+              closed
+							completed
+							targetValue
+              totalProgress
+              totalProgressPercentage
+							personalisedMedal
+							profile {
+								id
+							}
+              target {
+                type {
+                  iconFullPath
+                  iconFullPathWhite
+                  name
+                }
+                value
+                displayName
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

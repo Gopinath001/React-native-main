@@ -1,0 +1,52 @@
+default_platform(:android)
+
+platform :android do
+	def create_version_code(target: './app/build.gradle')
+    sh %Q{cd ../ && echo "$(awk '{sub(/RAP_APP_VERSION/, "#{File.read("../../APP_VERSION").strip}")}1' #{target})" > #{target} && cd -}
+#'# This fixes syntax highlighting for the rest of the file. /shrug
+  end
+	def revert_create_version_code(target: './app/build.gradle')
+    sh %Q{cd ../ && echo "$(awk '{sub(/versionName .*$/, "versionName \\"RAP_APP_VERSION\\"")}1' #{target})" > #{target} && cd -}
+#'# This fixes syntax highlighting for the rest of the file. /shrug
+  end
+	def increment_version_code(gradle_build: './app/build.gradle')
+    sh %Q{cd ../ && echo "$(awk '{sub(/versionCode [[:digit:]]+$/,"versionCode #{google_play_track_version_codes(track: "alpha")[0] + 1}")}1' #{gradle_build})" > #{gradle_build} && cd -}
+#'# This fixes syntax highlighting for the rest of the file. /shrug
+  end
+
+  desc "Deploy a new version to the Google Play"
+  lane :android do
+		create_version_code target: "./app/build.gradle"
+		increment_version_code gradle_build: "./app/build.gradle"
+
+		# To avoid memory issues with CircleCI run these two commands seperately
+		# otherwise the OOM service kills off the Gradle daemon.
+    gradle(task: "clean bundleReleaseJsAndAssets")
+    gradle(task: "bundleRelease -x bundleReleaseJsAndAssets")
+
+		# Send the bundle to the store.
+    upload_to_play_store(
+			track: "internal",
+			skip_upload_metadata: true,
+			skip_upload_changelogs: true,
+			skip_upload_images: true,
+			skip_upload_screenshots: true
+		)
+
+		# We can only upload our bundle to internal but we can promote a track
+		# using the same method so run the upload again without actually uploading
+		# anything so it promotes from internal testing to closed testing.
+		upload_to_play_store(
+			track: "internal",
+			track_promote_to: "alpha",
+			skip_upload_apk: true,
+			skip_upload_aab: true,
+			skip_upload_metadata: true,
+			skip_upload_changelogs: true,
+			skip_upload_images: true,
+			skip_upload_screenshots: true
+		)
+
+		revert_create_version_code target: "./app/build.gradle"
+  end
+end

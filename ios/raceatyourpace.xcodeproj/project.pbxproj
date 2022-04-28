@@ -1,0 +1,811 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00A16A7359CC4438B2AB1381 /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DABA60D2FCB24B0B99246C86 /* Oswald-Regular.ttf */; };
+		00E356F31AD99517003FC87E /* raceatyourpaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* raceatyourpaceTests.m */; };
+		02AADC233DAA4C7BBCD1DA19 /* Oswald-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8650181A583F45609DB335BA /* Oswald-Medium.ttf */; };
+		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
+		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		27D5F33B6B2473CFA5B3A169 /* libPods-raceatyourpace-raceatyourpaceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5E220034C5DFD309C6F140 /* libPods-raceatyourpace-raceatyourpaceTests.a */; };
+		289025D3363E4F78BEEE88C8 /* Assistant-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 937B555FC04445C08E600C2F /* Assistant-ExtraLight.ttf */; };
+		2AF48999CEA246209BF5F5A5 /* Oswald-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7D5C06DD494454C9CA12751 /* Oswald-ExtraLight.ttf */; };
+		45A3EB8D8D9145B1B192A0D8 /* Assistant-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55A0EE4E59A74145AD1304DC /* Assistant-Regular.ttf */; };
+		51F707E46C914CCA8EE49DE7 /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 186F790FBCB042E8A99F7627 /* Oswald-Bold.ttf */; };
+		5338683F748D44D99C1BFEF8 /* Assistant-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8B8ED00FC5646488C525E39 /* Assistant-Medium.ttf */; };
+		53E99975478242FD990802FF /* Assistant-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 23BFB35A922748BA9C820725 /* Assistant-ExtraBold.ttf */; };
+		554A9CED2708EA5B0083ED95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 554A9CEC2708EA5B0083ED95 /* Assets.xcassets */; };
+		556B41FF27107C3400F5A4CF /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 556B41FE27107C3400F5A4CF /* icon.png */; };
+		557E3DDA27283EF000C0E914 /* bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557E3DD927283EF000C0E914 /* bridge.swift */; };
+		66C212E400EF4EB8B20DC1C7 /* Assistant-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA1957F8D0944009DF7F42C /* Assistant-SemiBold.ttf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8320398D270C717800FAECCA /* RopaSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8320398B270C717700FAECCA /* RopaSans-Italic.ttf */; };
+		8320398E270C717800FAECCA /* RopaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8320398C270C717700FAECCA /* RopaSans-Regular.ttf */; };
+		8CF862CE8AB44221B9AECD98 /* Oswald-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5AB3BA557324DFAAAD63125 /* Oswald-SemiBold.ttf */; };
+		9B2841C1B3E64284A3E0EA27 /* Assistant-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A043E3127B0C4A83A85B1E78 /* Assistant-Light.ttf */; };
+		B544B501F879414BA0418BFD /* Oswald-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F683B119CB24B8798D72912 /* Oswald-Light.ttf */; };
+		B6BFDB5EB8C6DFB64A69BCA9 /* libPods-raceatyourpace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58199A7A6A6766E057C37706 /* libPods-raceatyourpace.a */; };
+		EB0E3AD95D774E3D95236C5F /* Assistant-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FB92B2448BC41479A4C7A00 /* Assistant-Bold.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
+			remoteInfo = raceatyourpace;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00E356EE1AD99517003FC87E /* raceatyourpaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = raceatyourpaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* raceatyourpaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = raceatyourpaceTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* raceatyourpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = raceatyourpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = raceatyourpace/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = raceatyourpace/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = raceatyourpace/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = raceatyourpace/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = raceatyourpace/main.m; sourceTree = "<group>"; };
+		186F790FBCB042E8A99F7627 /* Oswald-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Oswald-Bold.ttf"; path = "../assets/fonts/Oswald-Bold.ttf"; sourceTree = "<group>"; };
+		1A25DE1B91EC5EF338364164 /* Pods-raceatyourpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-raceatyourpace.debug.xcconfig"; path = "Target Support Files/Pods-raceatyourpace/Pods-raceatyourpace.debug.xcconfig"; sourceTree = "<group>"; };
+		23BFB35A922748BA9C820725 /* Assistant-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Assistant-ExtraBold.ttf"; path = "../assets/fonts/Assistant-ExtraBold.ttf"; sourceTree = "<group>"; };
+		2F683B119CB24B8798D72912 /* Oswald-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Oswald-Light.ttf"; path = "../assets/fonts/Oswald-Light.ttf"; sourceTree = "<group>"; };
+		37BB8E5DEC9CD27A06F57A04 /* Pods-raceatyourpace-raceatyourpaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-raceatyourpace-raceatyourpaceTests.release.xcconfig"; path = "Target Support Files/Pods-raceatyourpace-raceatyourpaceTests/Pods-raceatyourpace-raceatyourpaceTests.release.xcconfig"; sourceTree = "<group>"; };
+		3CA1957F8D0944009DF7F42C /* Assistant-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Assistant-SemiBold.ttf"; path = "../assets/fonts/Assistant-SemiBold.ttf"; sourceTree = "<group>"; };
+		3FB92B2448BC41479A4C7A00 /* Assistant-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Assistant-Bold.ttf"; path = "../assets/fonts/Assistant-Bold.ttf"; sourceTree = "<group>"; };
+		401423C848A950F3D274139C /* Pods-raceatyourpace-raceatyourpaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-raceatyourpace-raceatyourpaceTests.debug.xcconfig"; path = "Target Support Files/Pods-raceatyourpace-raceatyourpaceTests/Pods-raceatyourpace-raceatyourpaceTests.debug.xcconfig"; sourceTree = "<group>"; };
+		554A9CEC2708EA5B0083ED95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = raceatyourpace/Assets.xcassets; sourceTree = "<group>"; };
+		556B41FE27107C3400F5A4CF /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = raceatyourpace/Assets.xcassets/icon.png; sourceTree = "<group>"; };
+		557E3DD827283EEF00C0E914 /* raceatyourpace-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "raceatyourpace-Bridging-Header.h"; sourceTree = "<group>"; };
+		557E3DD927283EF000C0E914 /* bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bridge.swift; sourceTree = "<group>"; };
+		55A0EE4E59A74145AD1304DC /* Assistant-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Assistant-Regular.ttf"; path = "../assets/fonts/Assistant-Regular.ttf"; sourceTree = "<group>"; };
+		58199A7A6A6766E057C37706 /* libPods-raceatyourpace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-raceatyourpace.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = raceatyourpace/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8320398B270C717700FAECCA /* RopaSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RopaSans-Italic.ttf"; path = "../assets/fonts/RopaSans-Italic.ttf"; sourceTree = "<group>"; };
+		8320398C270C717700FAECCA /* RopaSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RopaSans-Regular.ttf"; path = "../assets/fonts/RopaSans-Regular.ttf"; sourceTree = "<group>"; };
+		8650181A583F45609DB335BA /* Oswald-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Oswald-Medium.ttf"; path = "../assets/fonts/Oswald-Medium.ttf"; sourceTree = "<group>"; };
+		937B555FC04445C08E600C2F /* Assistant-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Assistant-ExtraLight.ttf"; path = "../assets/fonts/Assistant-ExtraLight.ttf"; sourceTree = "<group>"; };
+		A043E3127B0C4A83A85B1E78 /* Assistant-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Assistant-Light.ttf"; path = "../assets/fonts/Assistant-Light.ttf"; sourceTree = "<group>"; };
+		AACD6BEF9706FEA54F41F641 /* Pods-raceatyourpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-raceatyourpace.release.xcconfig"; path = "Target Support Files/Pods-raceatyourpace/Pods-raceatyourpace.release.xcconfig"; sourceTree = "<group>"; };
+		B8B8ED00FC5646488C525E39 /* Assistant-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Assistant-Medium.ttf"; path = "../assets/fonts/Assistant-Medium.ttf"; sourceTree = "<group>"; };
+		C5AB3BA557324DFAAAD63125 /* Oswald-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Oswald-SemiBold.ttf"; path = "../assets/fonts/Oswald-SemiBold.ttf"; sourceTree = "<group>"; };
+		D80F3A882705055B00EF4346 /* raceatyourpace.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = raceatyourpace.entitlements; path = raceatyourpace/raceatyourpace.entitlements; sourceTree = "<group>"; };
+		DABA60D2FCB24B0B99246C86 /* Oswald-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Oswald-Regular.ttf"; path = "../assets/fonts/Oswald-Regular.ttf"; sourceTree = "<group>"; };
+		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EF5E220034C5DFD309C6F140 /* libPods-raceatyourpace-raceatyourpaceTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-raceatyourpace-raceatyourpaceTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7D5C06DD494454C9CA12751 /* Oswald-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Oswald-ExtraLight.ttf"; path = "../assets/fonts/Oswald-ExtraLight.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00E356EB1AD99517003FC87E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27D5F33B6B2473CFA5B3A169 /* libPods-raceatyourpace-raceatyourpaceTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6BFDB5EB8C6DFB64A69BCA9 /* libPods-raceatyourpace.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00E356EF1AD99517003FC87E /* raceatyourpaceTests */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F21AD99517003FC87E /* raceatyourpaceTests.m */,
+				00E356F01AD99517003FC87E /* Supporting Files */,
+			);
+			path = raceatyourpaceTests;
+			sourceTree = "<group>";
+		};
+		00E356F01AD99517003FC87E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F11AD99517003FC87E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		13B07FAE1A68108700A75B9A /* raceatyourpace */ = {
+			isa = PBXGroup;
+			children = (
+				D80F3A882705055B00EF4346 /* raceatyourpace.entitlements */,
+				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				554A9CEC2708EA5B0083ED95 /* Assets.xcassets */,
+				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				13B07FB61A68108700A75B9A /* Info.plist */,
+				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
+				13B07FB71A68108700A75B9A /* main.m */,
+			);
+			name = raceatyourpace;
+			sourceTree = "<group>";
+		};
+		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				58199A7A6A6766E057C37706 /* libPods-raceatyourpace.a */,
+				EF5E220034C5DFD309C6F140 /* libPods-raceatyourpace-raceatyourpaceTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		80DA14589AC38E8959D16F54 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1A25DE1B91EC5EF338364164 /* Pods-raceatyourpace.debug.xcconfig */,
+				AACD6BEF9706FEA54F41F641 /* Pods-raceatyourpace.release.xcconfig */,
+				401423C848A950F3D274139C /* Pods-raceatyourpace-raceatyourpaceTests.debug.xcconfig */,
+				37BB8E5DEC9CD27A06F57A04 /* Pods-raceatyourpace-raceatyourpaceTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		83CBB9F61A601CBA00E9B192 = {
+			isa = PBXGroup;
+			children = (
+				557E3DD927283EF000C0E914 /* bridge.swift */,
+				8320398B270C717700FAECCA /* RopaSans-Italic.ttf */,
+				8320398C270C717700FAECCA /* RopaSans-Regular.ttf */,
+				556B41FE27107C3400F5A4CF /* icon.png */,
+				13B07FAE1A68108700A75B9A /* raceatyourpace */,
+				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				00E356EF1AD99517003FC87E /* raceatyourpaceTests */,
+				83CBBA001A601CBA00E9B192 /* Products */,
+				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				80DA14589AC38E8959D16F54 /* Pods */,
+				CA76BDDE8C0F4A9C857D381D /* Resources */,
+				557E3DD827283EEF00C0E914 /* raceatyourpace-Bridging-Header.h */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
+		};
+		83CBBA001A601CBA00E9B192 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13B07F961A680F5B00A75B9A /* raceatyourpace.app */,
+				00E356EE1AD99517003FC87E /* raceatyourpaceTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA76BDDE8C0F4A9C857D381D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				186F790FBCB042E8A99F7627 /* Oswald-Bold.ttf */,
+				F7D5C06DD494454C9CA12751 /* Oswald-ExtraLight.ttf */,
+				2F683B119CB24B8798D72912 /* Oswald-Light.ttf */,
+				8650181A583F45609DB335BA /* Oswald-Medium.ttf */,
+				DABA60D2FCB24B0B99246C86 /* Oswald-Regular.ttf */,
+				C5AB3BA557324DFAAAD63125 /* Oswald-SemiBold.ttf */,
+				3FB92B2448BC41479A4C7A00 /* Assistant-Bold.ttf */,
+				23BFB35A922748BA9C820725 /* Assistant-ExtraBold.ttf */,
+				937B555FC04445C08E600C2F /* Assistant-ExtraLight.ttf */,
+				A043E3127B0C4A83A85B1E78 /* Assistant-Light.ttf */,
+				B8B8ED00FC5646488C525E39 /* Assistant-Medium.ttf */,
+				55A0EE4E59A74145AD1304DC /* Assistant-Regular.ttf */,
+				3CA1957F8D0944009DF7F42C /* Assistant-SemiBold.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00E356ED1AD99517003FC87E /* raceatyourpaceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "raceatyourpaceTests" */;
+			buildPhases = (
+				56B86A1E5D156B46722A985F /* [CP] Check Pods Manifest.lock */,
+				00E356EA1AD99517003FC87E /* Sources */,
+				00E356EB1AD99517003FC87E /* Frameworks */,
+				00E356EC1AD99517003FC87E /* Resources */,
+				474402F42295D6412B258FD1 /* [CP] Embed Pods Frameworks */,
+				2B7181F9E7A41353AE7677EA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00E356F51AD99517003FC87E /* PBXTargetDependency */,
+			);
+			name = raceatyourpaceTests;
+			productName = raceatyourpaceTests;
+			productReference = 00E356EE1AD99517003FC87E /* raceatyourpaceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		13B07F861A680F5B00A75B9A /* raceatyourpace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "raceatyourpace" */;
+			buildPhases = (
+				4CAD6CB48B88D97346F35816 /* [CP] Check Pods Manifest.lock */,
+				FD10A7F022414F080027D42C /* Start Packager */,
+				13B07F871A680F5B00A75B9A /* Sources */,
+				13B07F8C1A680F5B00A75B9A /* Frameworks */,
+				13B07F8E1A680F5B00A75B9A /* Resources */,
+				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				89C3EADDB8A0F69B9F42223A /* [CP] Embed Pods Frameworks */,
+				B34A3B07CCFEDF38CA099F61 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = raceatyourpace;
+			productName = raceatyourpace;
+			productReference = 13B07F961A680F5B00A75B9A /* raceatyourpace.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83CBB9F71A601CBA00E9B192 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					00E356ED1AD99517003FC87E = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						LastSwiftMigration = 1310;
+					};
+				};
+			};
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "raceatyourpace" */;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 83CBB9F61A601CBA00E9B192;
+			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13B07F861A680F5B00A75B9A /* raceatyourpace */,
+				00E356ED1AD99517003FC87E /* raceatyourpaceTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00E356EC1AD99517003FC87E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8E1A680F5B00A75B9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8320398D270C717800FAECCA /* RopaSans-Italic.ttf in Resources */,
+				8320398E270C717800FAECCA /* RopaSans-Regular.ttf in Resources */,
+				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				51F707E46C914CCA8EE49DE7 /* Oswald-Bold.ttf in Resources */,
+				2AF48999CEA246209BF5F5A5 /* Oswald-ExtraLight.ttf in Resources */,
+				B544B501F879414BA0418BFD /* Oswald-Light.ttf in Resources */,
+				02AADC233DAA4C7BBCD1DA19 /* Oswald-Medium.ttf in Resources */,
+				00A16A7359CC4438B2AB1381 /* Oswald-Regular.ttf in Resources */,
+				8CF862CE8AB44221B9AECD98 /* Oswald-SemiBold.ttf in Resources */,
+				EB0E3AD95D774E3D95236C5F /* Assistant-Bold.ttf in Resources */,
+				53E99975478242FD990802FF /* Assistant-ExtraBold.ttf in Resources */,
+				556B41FF27107C3400F5A4CF /* icon.png in Resources */,
+				289025D3363E4F78BEEE88C8 /* Assistant-ExtraLight.ttf in Resources */,
+				9B2841C1B3E64284A3E0EA27 /* Assistant-Light.ttf in Resources */,
+				5338683F748D44D99C1BFEF8 /* Assistant-Medium.ttf in Resources */,
+				45A3EB8D8D9145B1B192A0D8 /* Assistant-Regular.ttf in Resources */,
+				554A9CED2708EA5B0083ED95 /* Assets.xcassets in Resources */,
+				66C212E400EF4EB8B20DC1C7 /* Assistant-SemiBold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nexport NODE_BINARY=node\nexport ENTRY_FILE=\"${SRCROOT}/../src/mobile/index.tsx\"\n../node_modules/react-native/scripts/react-native-xcode.sh \n";
+		};
+		2B7181F9E7A41353AE7677EA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-raceatyourpace-raceatyourpaceTests/Pods-raceatyourpace-raceatyourpaceTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-raceatyourpace-raceatyourpaceTests/Pods-raceatyourpace-raceatyourpaceTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-raceatyourpace-raceatyourpaceTests/Pods-raceatyourpace-raceatyourpaceTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		474402F42295D6412B258FD1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-raceatyourpace-raceatyourpaceTests/Pods-raceatyourpace-raceatyourpaceTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-raceatyourpace-raceatyourpaceTests/Pods-raceatyourpace-raceatyourpaceTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-raceatyourpace-raceatyourpaceTests/Pods-raceatyourpace-raceatyourpaceTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4CAD6CB48B88D97346F35816 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-raceatyourpace-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56B86A1E5D156B46722A985F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-raceatyourpace-raceatyourpaceTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89C3EADDB8A0F69B9F42223A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-raceatyourpace/Pods-raceatyourpace-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-raceatyourpace/Pods-raceatyourpace-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-raceatyourpace/Pods-raceatyourpace-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B34A3B07CCFEDF38CA099F61 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-raceatyourpace/Pods-raceatyourpace-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-raceatyourpace/Pods-raceatyourpace-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-raceatyourpace/Pods-raceatyourpace-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD10A7F022414F080027D42C /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"SRCROOT $SRCROOT\"\nexport RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\n\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00E356EA1AD99517003FC87E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00E356F31AD99517003FC87E /* raceatyourpaceTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F871A680F5B00A75B9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				557E3DDA27283EF000C0E914 /* bridge.swift in Sources */,
+				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				13B07FC11A68108700A75B9A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13B07F861A680F5B00A75B9A /* raceatyourpace */;
+			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		00E356F61AD99517003FC87E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 401423C848A950F3D274139C /* Pods-raceatyourpace-raceatyourpaceTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7ZBUZ4MDJP;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = raceatyourpaceTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/raceatyourpace.app/raceatyourpace";
+			};
+			name = Debug;
+		};
+		00E356F71AD99517003FC87E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37BB8E5DEC9CD27A06F57A04 /* Pods-raceatyourpace-raceatyourpaceTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 7ZBUZ4MDJP;
+				INFOPLIST_FILE = raceatyourpaceTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e95f6223-9706-4063-9e94-85db481b37a8";
+				PROVISIONING_PROFILE_SPECIFIER = "com.raceatyourpace.cognito AppStore";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/raceatyourpace.app/raceatyourpace";
+			};
+			name = Release;
+		};
+		13B07F941A680F5B00A75B9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A25DE1B91EC5EF338364164 /* Pods-raceatyourpace.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = raceatyourpace/raceatyourpace.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 110;
+				DEVELOPMENT_TEAM = 7ZBUZ4MDJP;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = raceatyourpace/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"$(inherited)",
+				);
+				MARKETING_VERSION = RAP_APP_VERSION;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.raceatyourpace.cognito;
+				PRODUCT_NAME = raceatyourpace;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "raceatyourpace-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		13B07F951A680F5B00A75B9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AACD6BEF9706FEA54F41F641 /* Pods-raceatyourpace.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = raceatyourpace/raceatyourpace.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 110;
+				DEVELOPMENT_TEAM = 7ZBUZ4MDJP;
+				INFOPLIST_FILE = raceatyourpace/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"$(inherited)",
+				);
+				MARKETING_VERSION = RAP_APP_VERSION;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.raceatyourpace.cognito;
+				PRODUCT_NAME = raceatyourpace;
+				PROVISIONING_PROFILE = "e95f6223-9706-4063-9e94-85db481b37a8";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.raceatyourpace.cognito";
+				SWIFT_OBJC_BRIDGING_HEADER = "raceatyourpace-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		83CBBA201A601CBA00E9B192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "raceatyourpace-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		83CBBA211A601CBA00E9B192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "raceatyourpace-Bridging-Header.h";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "raceatyourpaceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00E356F61AD99517003FC87E /* Debug */,
+				00E356F71AD99517003FC87E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "raceatyourpace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13B07F941A680F5B00A75B9A /* Debug */,
+				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "raceatyourpace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83CBBA201A601CBA00E9B192 /* Debug */,
+				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
+}

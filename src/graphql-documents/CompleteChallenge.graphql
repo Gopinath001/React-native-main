@@ -1,0 +1,24 @@
+mutation CompleteChallenge(
+  $challenge_id: ID!
+  $completed: String
+	$closed: String
+  $engravingValue: String
+) {
+  updateChallengeEntry(
+    input: {
+      id: $challenge_id
+      completed: $completed
+			closed: $closed
+      personalisedMedalTargetValue: $engravingValue
+    }
+  ) {
+    challengeEntry {
+      withMedal
+      personalisedMedal
+      personalisedMedalTargetValue
+      year
+      month
+    }
+  }
+}
+

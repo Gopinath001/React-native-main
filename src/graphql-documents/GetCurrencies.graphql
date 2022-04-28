@@ -1,0 +1,10 @@
+query GetCurrencies {
+  currencies {
+    edges {
+      node {
+        iso
+				symbol
+      }
+    }
+  }
+}

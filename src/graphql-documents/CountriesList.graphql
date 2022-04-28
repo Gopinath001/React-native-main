@@ -1,0 +1,10 @@
+query CountriesList {
+  countries {
+    edges {
+      node {
+        iso2
+        name
+      }
+    }
+  }
+}

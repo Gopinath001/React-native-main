@@ -1,0 +1,8 @@
+app_identifier("com.raceatyourpace.cognito") # The bundle identifier of your app
+apple_id("james.blizzard@browserlondon.com") # Your Apple email address
+
+itc_team_id("123243207") # App Store Connect Team ID
+team_id("7ZBUZ4MDJP") # Developer Portal Team ID
+
+json_key_file("~/Downloads/rap-secrets.json") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
+package_name("com.raceatyourpace") # e.g. com.krausefx.app

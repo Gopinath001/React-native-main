@@ -1,0 +1,12 @@
+query AnnualPasses {
+	annualPasses {
+		edges {
+			node {
+				id
+				year
+				isChild
+				created
+			}
+		}
+	}
+}

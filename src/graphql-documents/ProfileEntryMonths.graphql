@@ -1,0 +1,21 @@
+query ProfileEntryMonths(
+	$id: ID!
+  $years: [Int]!
+  $closed: Boolean
+) {
+  userProfile(id: $id) {
+    challengeEntries(
+    completedOrClosed: $closed,
+    year_list: $years
+    order: { month: "DESC", year: "DESC" }
+  ) {
+      edges {
+        node {
+          month
+          year
+        }
+      }
+    }
+  }
+}
+

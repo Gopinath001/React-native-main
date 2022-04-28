@@ -1,0 +1,39 @@
+query ChallengeEntriesByMonthAndYear(
+	$month: [Int]!,
+	$year: [Int]!,
+  $closed: Boolean
+) {
+  challengeEntries(
+    year_list: $year
+    month_list: $month
+		completedOrClosed: $closed
+    order: { month: "DESC", year: "DESC" }
+  ) {
+    edges {
+      node {
+        id
+        year
+        month
+        closed
+        completed
+        targetValue
+        totalProgress
+        totalProgressPercentage
+        personalisedMedal
+				profile {
+					id
+				}
+        target {
+          type {
+            iconFullPath
+            iconFullPathWhite
+            name
+          }
+          value
+          displayName
+        }
+      }
+    }
+  }
+}
+

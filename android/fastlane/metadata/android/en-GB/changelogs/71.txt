@@ -1,0 +1,4 @@
+Thank you for using the Race At Your Pace app! You can view our full release notes online at www.raceatyourpace.co.uk/changelog
+
+# FIXED
+- Fixed a crash on the challenge extras page for devices running Android 12

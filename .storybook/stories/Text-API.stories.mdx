@@ -1,0 +1,83 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { Logo } from "components/Logo"
+import { Text } from "components/Text"
+import { Box } from "components/Box"
+
+<Meta title="API Reference/Text" />
+
+<Logo />
+<br />
+<br />
+
+# Text
+
+Text in the RAP platform is handled by the `Text` component, all variants of
+text are handled the same way via the `variant` prop.
+
+```typescript
+import { Text, Box } from "@rap/design"
+
+export const WelcomeAboard = () => (
+	<Box>
+		<Text variant={"h1"}>Welcome aboard!</Text>
+		<Text variant={"h3"}>We know why you're here and you're in good company!</Text>
+		<Text variant={"paragraph"}>
+			Explore our awesome range of challenges. There’s something for everyone whether you prefer to walk, run, cycle, swim or even maintain your daily step count! Your kids can take part too!</Text>
+		<Text variant={"paragraph"}>
+			You’ll have the entire month to complete your Race At Your Pace challenge in however many sessions you want, whenever and wherever you like. Both you and kids participants can track your race progress with our unique trackers!
+		</Text>
+	</Box>
+)
+```
+
+Will render the following
+
+<Box>
+	<Text variant={"h1"}>Welcome aboard!</Text>
+	<Text variant={"h3"}>We know why you're here and you're in good company!</Text>
+	<Text variant={"paragraph"}>
+		Explore our awesome range of challenges. There’s something for everyone whether you prefer to walk, run, cycle, swim or even maintain your daily step count! Your kids can take part too!</Text>
+	<Text variant={"paragraph"}>
+		You’ll have the entire month to complete your Race At Your Pace challenge in however many sessions you want, whenever and wherever you like. Both you and kids participants can track your race progress with our unique trackers!
+	</Text>
+</Box>
+
+## Reference
+
+<Text variant={"h1"}>Header 1</Text>
+
+```typescript
+<Text variant={"h1"}>Header 1</Text>
+```
+
+<Text variant={"h2"}>Header 2</Text>
+
+```typescript
+<Text variant={"h2"}>Header 2</Text>
+```
+
+<Text variant={"h3"}>Header 3</Text>
+
+```typescript
+<Text variant={"h3"}>Header 3</Text>
+```
+
+<Text variant={"h4"}>Header 4</Text>
+
+```typescript
+<Text variant={"h4"}>Header 4</Text>
+```
+
+<Text variant={"h5"}>Header 5</Text>
+
+```typescript
+<Text variant={"h5"}>Header 5</Text>
+```
+
+<Text variant={"paragraph"}>Paragraph text</Text>
+
+```typescript
+<Text variant={"paragraph"}>Paragraph text</Text>
+```
+
+

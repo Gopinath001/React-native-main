@@ -1,0 +1,13 @@
+mutation SetEntryPersonalised(
+  $entryId: ID!
+  $personalisedMedal: Int!
+) {
+  updateCartEntryLineItem(
+    input: {
+      id: $entryId
+      personalisedMedal: $personalisedMedal
+    }
+  ) {
+    clientMutationId
+  }
+}

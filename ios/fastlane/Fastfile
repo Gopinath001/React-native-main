@@ -1,0 +1,43 @@
+default_platform(:ios)
+
+platform :ios do
+	before_all do
+    setup_circle_ci
+  end
+
+  desc "Push a new beta build to TestFlight"
+  lane :beta do
+		def create_version_code(target: './raceatyourpace.xcodeproj/project.pbxproj')
+			sh %Q{cd ../ && echo "$(awk '{sub(/RAP_APP_VERSION/, "#{File.read("../../APP_VERSION").strip}")}1' #{target})" > #{target} && cd -}
+	#'# This fixes syntax highlighting for the rest of the file. /shrug
+		end
+		def revert_create_version_code(target: './raceatyourpace.xcodeproj/project.pbxproj')
+			sh %Q{cd ../ && echo "$(awk '{sub(/MARKETING_VERSION .*;$/, "MARKETING_VERSION = RAP_APP_VERSION;")}1' #{target})" > #{target} && cd -}
+	#'# This fixes syntax highlighting for the rest of the file. /shrug
+		end
+
+		app_store_connect_api_key(
+			key_id: "56NM242KG2",
+			issuer_id: "ed30d858-46b7-41e0-84d3-afaadd40f536",
+			key_filepath: "~/Downloads/Apple-Key.p8",
+			duration: 1200,
+			in_house: false
+		)
+
+		match(type: "appstore", readonly: true)
+		cocoapods
+
+		create_version_code target: "./raceatyourpace.xcodeproj/project.pbxproj"
+		increment_build_number({
+			xcodeproj: "raceatyourpace.xcodeproj",
+			build_number: latest_testflight_build_number + 1
+		})
+
+    build_app(workspace: "raceatyourpace.xcworkspace", scheme: "raceatyourpace")
+    upload_to_testflight(
+      skip_waiting_for_build_processing: true,
+			apple_id: "1588049738"
+    )
+		revert_create_version_code target: "./raceatyourpace.xcodeproj/project.pbxproj"
+  end
+end

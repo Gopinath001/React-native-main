@@ -1,0 +1,1612 @@
+input FileInfoInput {
+  name: String
+  alternativeText: String
+  caption: String
+}
+
+type UsersPermissionsMe {
+  id: ID!
+  username: String!
+  email: String!
+  confirmed: Boolean
+  blocked: Boolean
+  role: UsersPermissionsMeRole
+}
+
+type UsersPermissionsMeRole {
+  id: ID!
+  name: String!
+  description: String
+  type: String
+}
+
+input UsersPermissionsRegisterInput {
+  username: String!
+  email: String!
+  password: String!
+}
+
+input UsersPermissionsLoginInput {
+  identifier: String!
+  password: String!
+  provider: String = "local"
+}
+
+type UsersPermissionsLoginPayload {
+  jwt: String
+  user: UsersPermissionsMe!
+}
+
+type UserPermissionsPasswordPayload {
+  ok: Boolean!
+}
+
+enum ENUM_MEDALS_TYPE {
+  running
+  walking
+  cycling
+  swimming
+  wheelchair
+  steps
+  personalised
+}
+
+type Medals {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  Year: Int
+  Month: Int
+  Type: ENUM_MEDALS_TYPE
+  Image: UploadFile
+  published_at: DateTime
+}
+
+type MedalsConnection {
+  values: [Medals]
+  groupBy: MedalsGroupBy
+  aggregate: MedalsAggregator
+}
+
+type MedalsAggregator {
+  count: Int
+  totalCount: Int
+  sum: MedalsAggregatorSum
+  avg: MedalsAggregatorAvg
+  min: MedalsAggregatorMin
+  max: MedalsAggregatorMax
+}
+
+type MedalsAggregatorSum {
+  Year: Float
+  Month: Float
+}
+
+type MedalsAggregatorAvg {
+  Year: Float
+  Month: Float
+}
+
+type MedalsAggregatorMin {
+  Year: Float
+  Month: Float
+}
+
+type MedalsAggregatorMax {
+  Year: Float
+  Month: Float
+}
+
+type MedalsGroupBy {
+  id: [MedalsConnectionId]
+  created_at: [MedalsConnectionCreated_at]
+  updated_at: [MedalsConnectionUpdated_at]
+  Year: [MedalsConnectionYear]
+  Month: [MedalsConnectionMonth]
+  Type: [MedalsConnectionType]
+  Image: [MedalsConnectionImage]
+  published_at: [MedalsConnectionPublished_at]
+}
+
+type MedalsConnectionId {
+  key: ID
+  connection: MedalsConnection
+}
+
+type MedalsConnectionCreated_at {
+  key: DateTime
+  connection: MedalsConnection
+}
+
+type MedalsConnectionUpdated_at {
+  key: DateTime
+  connection: MedalsConnection
+}
+
+type MedalsConnectionYear {
+  key: Int
+  connection: MedalsConnection
+}
+
+type MedalsConnectionMonth {
+  key: Int
+  connection: MedalsConnection
+}
+
+type MedalsConnectionType {
+  key: String
+  connection: MedalsConnection
+}
+
+type MedalsConnectionImage {
+  key: ID
+  connection: MedalsConnection
+}
+
+type MedalsConnectionPublished_at {
+  key: DateTime
+  connection: MedalsConnection
+}
+
+input MedalInput {
+  Year: Int
+  Month: Int
+  Type: ENUM_MEDALS_TYPE
+  Image: ID
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editMedalInput {
+  Year: Int
+  Month: Int
+  Type: ENUM_MEDALS_TYPE
+  Image: ID
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createMedalInput {
+  data: MedalInput
+}
+
+type createMedalPayload {
+  medal: Medals
+}
+
+input updateMedalInput {
+  where: InputID
+  data: editMedalInput
+}
+
+type updateMedalPayload {
+  medal: Medals
+}
+
+input deleteMedalInput {
+  where: InputID
+}
+
+type deleteMedalPayload {
+  medal: Medals
+}
+
+type Pages {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  Title: String
+  Content: String
+  Slug: String
+  published_at: DateTime
+}
+
+type PagesConnection {
+  values: [Pages]
+  groupBy: PagesGroupBy
+  aggregate: PagesAggregator
+}
+
+type PagesAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type PagesGroupBy {
+  id: [PagesConnectionId]
+  created_at: [PagesConnectionCreated_at]
+  updated_at: [PagesConnectionUpdated_at]
+  Title: [PagesConnectionTitle]
+  Content: [PagesConnectionContent]
+  Slug: [PagesConnectionSlug]
+  published_at: [PagesConnectionPublished_at]
+}
+
+type PagesConnectionId {
+  key: ID
+  connection: PagesConnection
+}
+
+type PagesConnectionCreated_at {
+  key: DateTime
+  connection: PagesConnection
+}
+
+type PagesConnectionUpdated_at {
+  key: DateTime
+  connection: PagesConnection
+}
+
+type PagesConnectionTitle {
+  key: String
+  connection: PagesConnection
+}
+
+type PagesConnectionContent {
+  key: String
+  connection: PagesConnection
+}
+
+type PagesConnectionSlug {
+  key: String
+  connection: PagesConnection
+}
+
+type PagesConnectionPublished_at {
+  key: DateTime
+  connection: PagesConnection
+}
+
+input PageInput {
+  Title: String
+  Content: String
+  Slug: String
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editPageInput {
+  Title: String
+  Content: String
+  Slug: String
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createPageInput {
+  data: PageInput
+}
+
+type createPagePayload {
+  page: Pages
+}
+
+input updatePageInput {
+  where: InputID
+  data: editPageInput
+}
+
+type updatePagePayload {
+  page: Pages
+}
+
+input deletePageInput {
+  where: InputID
+}
+
+type deletePagePayload {
+  page: Pages
+}
+
+type ProgressMessages {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  DayOfMonth: Int!
+  Message: String
+  published_at: DateTime
+}
+
+type ProgressMessagesConnection {
+  values: [ProgressMessages]
+  groupBy: ProgressMessagesGroupBy
+  aggregate: ProgressMessagesAggregator
+}
+
+type ProgressMessagesAggregator {
+  count: Int
+  totalCount: Int
+  sum: ProgressMessagesAggregatorSum
+  avg: ProgressMessagesAggregatorAvg
+  min: ProgressMessagesAggregatorMin
+  max: ProgressMessagesAggregatorMax
+}
+
+type ProgressMessagesAggregatorSum {
+  DayOfMonth: Float
+}
+
+type ProgressMessagesAggregatorAvg {
+  DayOfMonth: Float
+}
+
+type ProgressMessagesAggregatorMin {
+  DayOfMonth: Float
+}
+
+type ProgressMessagesAggregatorMax {
+  DayOfMonth: Float
+}
+
+type ProgressMessagesGroupBy {
+  id: [ProgressMessagesConnectionId]
+  created_at: [ProgressMessagesConnectionCreated_at]
+  updated_at: [ProgressMessagesConnectionUpdated_at]
+  DayOfMonth: [ProgressMessagesConnectionDayOfMonth]
+  Message: [ProgressMessagesConnectionMessage]
+  published_at: [ProgressMessagesConnectionPublished_at]
+}
+
+type ProgressMessagesConnectionId {
+  key: ID
+  connection: ProgressMessagesConnection
+}
+
+type ProgressMessagesConnectionCreated_at {
+  key: DateTime
+  connection: ProgressMessagesConnection
+}
+
+type ProgressMessagesConnectionUpdated_at {
+  key: DateTime
+  connection: ProgressMessagesConnection
+}
+
+type ProgressMessagesConnectionDayOfMonth {
+  key: Int
+  connection: ProgressMessagesConnection
+}
+
+type ProgressMessagesConnectionMessage {
+  key: String
+  connection: ProgressMessagesConnection
+}
+
+type ProgressMessagesConnectionPublished_at {
+  key: DateTime
+  connection: ProgressMessagesConnection
+}
+
+input ProgressMessageInput {
+  DayOfMonth: Int!
+  Message: String
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editProgressMessageInput {
+  DayOfMonth: Int
+  Message: String
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createProgressMessageInput {
+  data: ProgressMessageInput
+}
+
+type createProgressMessagePayload {
+  progressMessage: ProgressMessages
+}
+
+input updateProgressMessageInput {
+  where: InputID
+  data: editProgressMessageInput
+}
+
+type updateProgressMessagePayload {
+  progressMessage: ProgressMessages
+}
+
+input deleteProgressMessageInput {
+  where: InputID
+}
+
+type deleteProgressMessagePayload {
+  progressMessage: ProgressMessages
+}
+
+type PublicMedia {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name: String
+  source: UploadFile
+  published_at: DateTime
+}
+
+type PublicMediaConnection {
+  values: [PublicMedia]
+  groupBy: PublicMediaGroupBy
+  aggregate: PublicMediaAggregator
+}
+
+type PublicMediaAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type PublicMediaGroupBy {
+  id: [PublicMediaConnectionId]
+  created_at: [PublicMediaConnectionCreated_at]
+  updated_at: [PublicMediaConnectionUpdated_at]
+  name: [PublicMediaConnectionName]
+  source: [PublicMediaConnectionSource]
+  published_at: [PublicMediaConnectionPublished_at]
+}
+
+type PublicMediaConnectionId {
+  key: ID
+  connection: PublicMediaConnection
+}
+
+type PublicMediaConnectionCreated_at {
+  key: DateTime
+  connection: PublicMediaConnection
+}
+
+type PublicMediaConnectionUpdated_at {
+  key: DateTime
+  connection: PublicMediaConnection
+}
+
+type PublicMediaConnectionName {
+  key: String
+  connection: PublicMediaConnection
+}
+
+type PublicMediaConnectionSource {
+  key: ID
+  connection: PublicMediaConnection
+}
+
+type PublicMediaConnectionPublished_at {
+  key: DateTime
+  connection: PublicMediaConnection
+}
+
+input PublicMediaInput {
+  name: String
+  source: ID
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editPublicMediaInput {
+  name: String
+  source: ID
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createPublicMediaInput {
+  data: PublicMediaInput
+}
+
+type createPublicMediaPayload {
+  publicMedia: PublicMedia
+}
+
+input updatePublicMediaInput {
+  where: InputID
+  data: editPublicMediaInput
+}
+
+type updatePublicMediaPayload {
+  publicMedia: PublicMedia
+}
+
+input deletePublicMediaInput {
+  where: InputID
+}
+
+type deletePublicMediaPayload {
+  publicMedia: PublicMedia
+}
+
+type Snippets {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  Key: String
+  Text: String
+  published_at: DateTime
+}
+
+type SnippetsConnection {
+  values: [Snippets]
+  groupBy: SnippetsGroupBy
+  aggregate: SnippetsAggregator
+}
+
+type SnippetsAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type SnippetsGroupBy {
+  id: [SnippetsConnectionId]
+  created_at: [SnippetsConnectionCreated_at]
+  updated_at: [SnippetsConnectionUpdated_at]
+  Key: [SnippetsConnectionKey]
+  Text: [SnippetsConnectionText]
+  published_at: [SnippetsConnectionPublished_at]
+}
+
+type SnippetsConnectionId {
+  key: ID
+  connection: SnippetsConnection
+}
+
+type SnippetsConnectionCreated_at {
+  key: DateTime
+  connection: SnippetsConnection
+}
+
+type SnippetsConnectionUpdated_at {
+  key: DateTime
+  connection: SnippetsConnection
+}
+
+type SnippetsConnectionKey {
+  key: String
+  connection: SnippetsConnection
+}
+
+type SnippetsConnectionText {
+  key: String
+  connection: SnippetsConnection
+}
+
+type SnippetsConnectionPublished_at {
+  key: DateTime
+  connection: SnippetsConnection
+}
+
+input SnippetInput {
+  Key: String
+  Text: String
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editSnippetInput {
+  Key: String
+  Text: String
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createSnippetInput {
+  data: SnippetInput
+}
+
+type createSnippetPayload {
+  snippet: Snippets
+}
+
+input updateSnippetInput {
+  where: InputID
+  data: editSnippetInput
+}
+
+type updateSnippetPayload {
+  snippet: Snippets
+}
+
+input deleteSnippetInput {
+  where: InputID
+}
+
+type deleteSnippetPayload {
+  snippet: Snippets
+}
+
+enum ENUM_STAFFHELPPAGES_CATEGORY {
+  General
+  Fulfillment
+}
+
+type StaffHelpPages {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  Category: ENUM_STAFFHELPPAGES_CATEGORY
+  Title: String
+  Content: String
+  published_at: DateTime
+}
+
+type StaffHelpPagesConnection {
+  values: [StaffHelpPages]
+  groupBy: StaffHelpPagesGroupBy
+  aggregate: StaffHelpPagesAggregator
+}
+
+type StaffHelpPagesAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type StaffHelpPagesGroupBy {
+  id: [StaffHelpPagesConnectionId]
+  created_at: [StaffHelpPagesConnectionCreated_at]
+  updated_at: [StaffHelpPagesConnectionUpdated_at]
+  Category: [StaffHelpPagesConnectionCategory]
+  Title: [StaffHelpPagesConnectionTitle]
+  Content: [StaffHelpPagesConnectionContent]
+  published_at: [StaffHelpPagesConnectionPublished_at]
+}
+
+type StaffHelpPagesConnectionId {
+  key: ID
+  connection: StaffHelpPagesConnection
+}
+
+type StaffHelpPagesConnectionCreated_at {
+  key: DateTime
+  connection: StaffHelpPagesConnection
+}
+
+type StaffHelpPagesConnectionUpdated_at {
+  key: DateTime
+  connection: StaffHelpPagesConnection
+}
+
+type StaffHelpPagesConnectionCategory {
+  key: String
+  connection: StaffHelpPagesConnection
+}
+
+type StaffHelpPagesConnectionTitle {
+  key: String
+  connection: StaffHelpPagesConnection
+}
+
+type StaffHelpPagesConnectionContent {
+  key: String
+  connection: StaffHelpPagesConnection
+}
+
+type StaffHelpPagesConnectionPublished_at {
+  key: DateTime
+  connection: StaffHelpPagesConnection
+}
+
+input StaffHelpPageInput {
+  Category: ENUM_STAFFHELPPAGES_CATEGORY
+  Title: String
+  Content: String
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editStaffHelpPageInput {
+  Category: ENUM_STAFFHELPPAGES_CATEGORY
+  Title: String
+  Content: String
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createStaffHelpPageInput {
+  data: StaffHelpPageInput
+}
+
+type createStaffHelpPagePayload {
+  staffHelpPage: StaffHelpPages
+}
+
+input updateStaffHelpPageInput {
+  where: InputID
+  data: editStaffHelpPageInput
+}
+
+type updateStaffHelpPagePayload {
+  staffHelpPage: StaffHelpPages
+}
+
+input deleteStaffHelpPageInput {
+  where: InputID
+}
+
+type deleteStaffHelpPagePayload {
+  staffHelpPage: StaffHelpPages
+}
+
+type I18NLocale {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name: String
+  code: String
+}
+
+input LocaleInput {
+  name: String
+  code: String
+  created_by: ID
+  updated_by: ID
+}
+
+input editLocaleInput {
+  name: String
+  code: String
+  created_by: ID
+  updated_by: ID
+}
+
+type UploadFile {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name: String!
+  alternativeText: String
+  caption: String
+  width: Int
+  height: Int
+  formats: JSON
+  hash: String!
+  ext: String
+  mime: String!
+  size: Float!
+  url: String!
+  previewUrl: String
+  provider: String!
+  provider_metadata: JSON
+  related(sort: String, limit: Int, start: Int, where: JSON): [Morph]
+}
+
+type UploadFileConnection {
+  values: [UploadFile]
+  groupBy: UploadFileGroupBy
+  aggregate: UploadFileAggregator
+}
+
+type UploadFileAggregator {
+  count: Int
+  totalCount: Int
+  sum: UploadFileAggregatorSum
+  avg: UploadFileAggregatorAvg
+  min: UploadFileAggregatorMin
+  max: UploadFileAggregatorMax
+}
+
+type UploadFileAggregatorSum {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileAggregatorAvg {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileAggregatorMin {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileAggregatorMax {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileGroupBy {
+  id: [UploadFileConnectionId]
+  created_at: [UploadFileConnectionCreated_at]
+  updated_at: [UploadFileConnectionUpdated_at]
+  name: [UploadFileConnectionName]
+  alternativeText: [UploadFileConnectionAlternativeText]
+  caption: [UploadFileConnectionCaption]
+  width: [UploadFileConnectionWidth]
+  height: [UploadFileConnectionHeight]
+  formats: [UploadFileConnectionFormats]
+  hash: [UploadFileConnectionHash]
+  ext: [UploadFileConnectionExt]
+  mime: [UploadFileConnectionMime]
+  size: [UploadFileConnectionSize]
+  url: [UploadFileConnectionUrl]
+  previewUrl: [UploadFileConnectionPreviewUrl]
+  provider: [UploadFileConnectionProvider]
+  provider_metadata: [UploadFileConnectionProvider_metadata]
+}
+
+type UploadFileConnectionId {
+  key: ID
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionCreated_at {
+  key: DateTime
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionUpdated_at {
+  key: DateTime
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionName {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionAlternativeText {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionCaption {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionWidth {
+  key: Int
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionHeight {
+  key: Int
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionFormats {
+  key: JSON
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionHash {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionExt {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionMime {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionSize {
+  key: Float
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionUrl {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionPreviewUrl {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionProvider {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionProvider_metadata {
+  key: JSON
+  connection: UploadFileConnection
+}
+
+input FileInput {
+  name: String!
+  alternativeText: String
+  caption: String
+  width: Int
+  height: Int
+  formats: JSON
+  hash: String!
+  ext: String
+  mime: String!
+  size: Float!
+  url: String!
+  previewUrl: String
+  provider: String!
+  provider_metadata: JSON
+  related: [ID]
+  created_by: ID
+  updated_by: ID
+}
+
+input editFileInput {
+  name: String
+  alternativeText: String
+  caption: String
+  width: Int
+  height: Int
+  formats: JSON
+  hash: String
+  ext: String
+  mime: String
+  size: Float
+  url: String
+  previewUrl: String
+  provider: String
+  provider_metadata: JSON
+  related: [ID]
+  created_by: ID
+  updated_by: ID
+}
+
+input deleteFileInput {
+  where: InputID
+}
+
+type deleteFilePayload {
+  file: UploadFile
+}
+
+type UsersPermissionsPermission {
+  id: ID!
+  type: String!
+  controller: String!
+  action: String!
+  enabled: Boolean!
+  policy: String
+  role: UsersPermissionsRole
+}
+
+type UsersPermissionsRole {
+  id: ID!
+  name: String!
+  description: String
+  type: String
+  permissions(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): [UsersPermissionsPermission]
+  users(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): [UsersPermissionsUser]
+}
+
+type UsersPermissionsRoleConnection {
+  values: [UsersPermissionsRole]
+  groupBy: UsersPermissionsRoleGroupBy
+  aggregate: UsersPermissionsRoleAggregator
+}
+
+type UsersPermissionsRoleAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type UsersPermissionsRoleGroupBy {
+  id: [UsersPermissionsRoleConnectionId]
+  name: [UsersPermissionsRoleConnectionName]
+  description: [UsersPermissionsRoleConnectionDescription]
+  type: [UsersPermissionsRoleConnectionType]
+}
+
+type UsersPermissionsRoleConnectionId {
+  key: ID
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionName {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionDescription {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionType {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+input RoleInput {
+  name: String!
+  description: String
+  type: String
+  permissions: [ID]
+  users: [ID]
+  created_by: ID
+  updated_by: ID
+}
+
+input editRoleInput {
+  name: String
+  description: String
+  type: String
+  permissions: [ID]
+  users: [ID]
+  created_by: ID
+  updated_by: ID
+}
+
+input createRoleInput {
+  data: RoleInput
+}
+
+type createRolePayload {
+  role: UsersPermissionsRole
+}
+
+input updateRoleInput {
+  where: InputID
+  data: editRoleInput
+}
+
+type updateRolePayload {
+  role: UsersPermissionsRole
+}
+
+input deleteRoleInput {
+  where: InputID
+}
+
+type deleteRolePayload {
+  role: UsersPermissionsRole
+}
+
+type UsersPermissionsUser {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  username: String!
+  email: String!
+  provider: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: UsersPermissionsRole
+}
+
+type UsersPermissionsUserConnection {
+  values: [UsersPermissionsUser]
+  groupBy: UsersPermissionsUserGroupBy
+  aggregate: UsersPermissionsUserAggregator
+}
+
+type UsersPermissionsUserAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type UsersPermissionsUserGroupBy {
+  id: [UsersPermissionsUserConnectionId]
+  created_at: [UsersPermissionsUserConnectionCreated_at]
+  updated_at: [UsersPermissionsUserConnectionUpdated_at]
+  username: [UsersPermissionsUserConnectionUsername]
+  email: [UsersPermissionsUserConnectionEmail]
+  provider: [UsersPermissionsUserConnectionProvider]
+  confirmed: [UsersPermissionsUserConnectionConfirmed]
+  blocked: [UsersPermissionsUserConnectionBlocked]
+  role: [UsersPermissionsUserConnectionRole]
+}
+
+type UsersPermissionsUserConnectionId {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionCreated_at {
+  key: DateTime
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionUpdated_at {
+  key: DateTime
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionUsername {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionEmail {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionProvider {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionConfirmed {
+  key: Boolean
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionBlocked {
+  key: Boolean
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionRole {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+input UserInput {
+  username: String!
+  email: String!
+  provider: String
+  password: String
+  resetPasswordToken: String
+  confirmationToken: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: ID
+  created_by: ID
+  updated_by: ID
+}
+
+input editUserInput {
+  username: String
+  email: String
+  provider: String
+  password: String
+  resetPasswordToken: String
+  confirmationToken: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: ID
+  created_by: ID
+  updated_by: ID
+}
+
+input createUserInput {
+  data: UserInput
+}
+
+type createUserPayload {
+  user: UsersPermissionsUser
+}
+
+input updateUserInput {
+  where: InputID
+  data: editUserInput
+}
+
+type updateUserPayload {
+  user: UsersPermissionsUser
+}
+
+input deleteUserInput {
+  where: InputID
+}
+
+type deleteUserPayload {
+  user: UsersPermissionsUser
+}
+
+union Morph =
+    UsersPermissionsMe
+  | UsersPermissionsMeRole
+  | UsersPermissionsLoginPayload
+  | UserPermissionsPasswordPayload
+  | Medals
+  | MedalsConnection
+  | MedalsAggregator
+  | MedalsAggregatorSum
+  | MedalsAggregatorAvg
+  | MedalsAggregatorMin
+  | MedalsAggregatorMax
+  | MedalsGroupBy
+  | MedalsConnectionId
+  | MedalsConnectionCreated_at
+  | MedalsConnectionUpdated_at
+  | MedalsConnectionYear
+  | MedalsConnectionMonth
+  | MedalsConnectionType
+  | MedalsConnectionImage
+  | MedalsConnectionPublished_at
+  | createMedalPayload
+  | updateMedalPayload
+  | deleteMedalPayload
+  | Pages
+  | PagesConnection
+  | PagesAggregator
+  | PagesGroupBy
+  | PagesConnectionId
+  | PagesConnectionCreated_at
+  | PagesConnectionUpdated_at
+  | PagesConnectionTitle
+  | PagesConnectionContent
+  | PagesConnectionSlug
+  | PagesConnectionPublished_at
+  | createPagePayload
+  | updatePagePayload
+  | deletePagePayload
+  | ProgressMessages
+  | ProgressMessagesConnection
+  | ProgressMessagesAggregator
+  | ProgressMessagesAggregatorSum
+  | ProgressMessagesAggregatorAvg
+  | ProgressMessagesAggregatorMin
+  | ProgressMessagesAggregatorMax
+  | ProgressMessagesGroupBy
+  | ProgressMessagesConnectionId
+  | ProgressMessagesConnectionCreated_at
+  | ProgressMessagesConnectionUpdated_at
+  | ProgressMessagesConnectionDayOfMonth
+  | ProgressMessagesConnectionMessage
+  | ProgressMessagesConnectionPublished_at
+  | createProgressMessagePayload
+  | updateProgressMessagePayload
+  | deleteProgressMessagePayload
+  | PublicMedia
+  | PublicMediaConnection
+  | PublicMediaAggregator
+  | PublicMediaGroupBy
+  | PublicMediaConnectionId
+  | PublicMediaConnectionCreated_at
+  | PublicMediaConnectionUpdated_at
+  | PublicMediaConnectionName
+  | PublicMediaConnectionSource
+  | PublicMediaConnectionPublished_at
+  | createPublicMediaPayload
+  | updatePublicMediaPayload
+  | deletePublicMediaPayload
+  | Snippets
+  | SnippetsConnection
+  | SnippetsAggregator
+  | SnippetsGroupBy
+  | SnippetsConnectionId
+  | SnippetsConnectionCreated_at
+  | SnippetsConnectionUpdated_at
+  | SnippetsConnectionKey
+  | SnippetsConnectionText
+  | SnippetsConnectionPublished_at
+  | createSnippetPayload
+  | updateSnippetPayload
+  | deleteSnippetPayload
+  | StaffHelpPages
+  | StaffHelpPagesConnection
+  | StaffHelpPagesAggregator
+  | StaffHelpPagesGroupBy
+  | StaffHelpPagesConnectionId
+  | StaffHelpPagesConnectionCreated_at
+  | StaffHelpPagesConnectionUpdated_at
+  | StaffHelpPagesConnectionCategory
+  | StaffHelpPagesConnectionTitle
+  | StaffHelpPagesConnectionContent
+  | StaffHelpPagesConnectionPublished_at
+  | createStaffHelpPagePayload
+  | updateStaffHelpPagePayload
+  | deleteStaffHelpPagePayload
+  | I18NLocale
+  | UploadFile
+  | UploadFileConnection
+  | UploadFileAggregator
+  | UploadFileAggregatorSum
+  | UploadFileAggregatorAvg
+  | UploadFileAggregatorMin
+  | UploadFileAggregatorMax
+  | UploadFileGroupBy
+  | UploadFileConnectionId
+  | UploadFileConnectionCreated_at
+  | UploadFileConnectionUpdated_at
+  | UploadFileConnectionName
+  | UploadFileConnectionAlternativeText
+  | UploadFileConnectionCaption
+  | UploadFileConnectionWidth
+  | UploadFileConnectionHeight
+  | UploadFileConnectionFormats
+  | UploadFileConnectionHash
+  | UploadFileConnectionExt
+  | UploadFileConnectionMime
+  | UploadFileConnectionSize
+  | UploadFileConnectionUrl
+  | UploadFileConnectionPreviewUrl
+  | UploadFileConnectionProvider
+  | UploadFileConnectionProvider_metadata
+  | deleteFilePayload
+  | UsersPermissionsPermission
+  | UsersPermissionsRole
+  | UsersPermissionsRoleConnection
+  | UsersPermissionsRoleAggregator
+  | UsersPermissionsRoleGroupBy
+  | UsersPermissionsRoleConnectionId
+  | UsersPermissionsRoleConnectionName
+  | UsersPermissionsRoleConnectionDescription
+  | UsersPermissionsRoleConnectionType
+  | createRolePayload
+  | updateRolePayload
+  | deleteRolePayload
+  | UsersPermissionsUser
+  | UsersPermissionsUserConnection
+  | UsersPermissionsUserAggregator
+  | UsersPermissionsUserGroupBy
+  | UsersPermissionsUserConnectionId
+  | UsersPermissionsUserConnectionCreated_at
+  | UsersPermissionsUserConnectionUpdated_at
+  | UsersPermissionsUserConnectionUsername
+  | UsersPermissionsUserConnectionEmail
+  | UsersPermissionsUserConnectionProvider
+  | UsersPermissionsUserConnectionConfirmed
+  | UsersPermissionsUserConnectionBlocked
+  | UsersPermissionsUserConnectionRole
+  | createUserPayload
+  | updateUserPayload
+  | deleteUserPayload
+
+input InputID {
+  id: ID!
+}
+
+enum PublicationState {
+  LIVE
+  PREVIEW
+}
+
+type AdminUser {
+  id: ID!
+  username: String
+  firstname: String!
+  lastname: String!
+}
+
+type Query {
+  medal(id: ID!, publicationState: PublicationState): Medals
+  medals(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+    publicationState: PublicationState
+  ): [Medals]
+  medalsConnection(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): MedalsConnection
+  page(id: ID!, publicationState: PublicationState): Pages
+  pages(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+    publicationState: PublicationState
+  ): [Pages]
+  pagesConnection(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): PagesConnection
+  progressMessage(id: ID!, publicationState: PublicationState): ProgressMessages
+  progressMessages(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+    publicationState: PublicationState
+  ): [ProgressMessages]
+  progressMessagesConnection(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): ProgressMessagesConnection
+  publicMedia(id: ID!, publicationState: PublicationState): PublicMedia
+  publicMedias(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+    publicationState: PublicationState
+  ): [PublicMedia]
+  publicMediasConnection(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): PublicMediaConnection
+  snippet(id: ID!, publicationState: PublicationState): Snippets
+  snippets(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+    publicationState: PublicationState
+  ): [Snippets]
+  snippetsConnection(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): SnippetsConnection
+  staffHelpPage(id: ID!, publicationState: PublicationState): StaffHelpPages
+  staffHelpPages(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+    publicationState: PublicationState
+  ): [StaffHelpPages]
+  staffHelpPagesConnection(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): StaffHelpPagesConnection
+  files(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+    publicationState: PublicationState
+  ): [UploadFile]
+  filesConnection(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): UploadFileConnection
+  role(id: ID!, publicationState: PublicationState): UsersPermissionsRole
+
+  # Retrieve all the existing roles. You can't apply filters on this query.
+  roles(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+    publicationState: PublicationState
+  ): [UsersPermissionsRole]
+  rolesConnection(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): UsersPermissionsRoleConnection
+  user(id: ID!, publicationState: PublicationState): UsersPermissionsUser
+  users(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+    publicationState: PublicationState
+  ): [UsersPermissionsUser]
+  usersConnection(
+    sort: String
+    limit: Int
+    start: Int
+    where: JSON
+  ): UsersPermissionsUserConnection
+  me: UsersPermissionsMe
+}
+
+type Mutation {
+  createMedal(input: createMedalInput): createMedalPayload
+  updateMedal(input: updateMedalInput): updateMedalPayload
+  deleteMedal(input: deleteMedalInput): deleteMedalPayload
+  createPage(input: createPageInput): createPagePayload
+  updatePage(input: updatePageInput): updatePagePayload
+  deletePage(input: deletePageInput): deletePagePayload
+  createProgressMessage(
+    input: createProgressMessageInput
+  ): createProgressMessagePayload
+  updateProgressMessage(
+    input: updateProgressMessageInput
+  ): updateProgressMessagePayload
+  deleteProgressMessage(
+    input: deleteProgressMessageInput
+  ): deleteProgressMessagePayload
+  createPublicMedia(input: createPublicMediaInput): createPublicMediaPayload
+  updatePublicMedia(input: updatePublicMediaInput): updatePublicMediaPayload
+  deletePublicMedia(input: deletePublicMediaInput): deletePublicMediaPayload
+  createSnippet(input: createSnippetInput): createSnippetPayload
+  updateSnippet(input: updateSnippetInput): updateSnippetPayload
+  deleteSnippet(input: deleteSnippetInput): deleteSnippetPayload
+  createStaffHelpPage(
+    input: createStaffHelpPageInput
+  ): createStaffHelpPagePayload
+  updateStaffHelpPage(
+    input: updateStaffHelpPageInput
+  ): updateStaffHelpPagePayload
+  deleteStaffHelpPage(
+    input: deleteStaffHelpPageInput
+  ): deleteStaffHelpPagePayload
+
+  # Delete one file
+  deleteFile(input: deleteFileInput): deleteFilePayload
+
+  # Create a new role
+  createRole(input: createRoleInput): createRolePayload
+
+  # Update an existing role
+  updateRole(input: updateRoleInput): updateRolePayload
+
+  # Delete an existing role
+  deleteRole(input: deleteRoleInput): deleteRolePayload
+
+  # Create a new user
+  createUser(input: createUserInput): createUserPayload
+
+  # Update an existing user
+  updateUser(input: updateUserInput): updateUserPayload
+
+  # Delete an existing user
+  deleteUser(input: deleteUserInput): deleteUserPayload
+  upload(
+    refId: ID
+    ref: String
+    field: String
+    source: String
+    info: FileInfoInput
+    file: Upload!
+  ): UploadFile!
+  multipleUpload(
+    refId: ID
+    ref: String
+    field: String
+    source: String
+    files: [Upload]!
+  ): [UploadFile]!
+  updateFileInfo(id: ID!, info: FileInfoInput!): UploadFile!
+  login(input: UsersPermissionsLoginInput!): UsersPermissionsLoginPayload!
+  register(input: UsersPermissionsRegisterInput!): UsersPermissionsLoginPayload!
+  forgotPassword(email: String!): UserPermissionsPasswordPayload
+  resetPassword(
+    password: String!
+    passwordConfirmation: String!
+    code: String!
+  ): UsersPermissionsLoginPayload
+  emailConfirmation(confirmation: String!): UsersPermissionsLoginPayload
+}
+
+# The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+scalar JSON
+
+# A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
+scalar DateTime
+
+# A time string with format: HH:mm:ss.SSS
+scalar Time
+
+# A date string, such as 2007-12-03, compliant with the `full-date` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
+scalar Date
+
+# The `Long` scalar type represents 52-bit integers
+scalar Long
+
+# The `Upload` scalar type represents a file upload.
+scalar Upload

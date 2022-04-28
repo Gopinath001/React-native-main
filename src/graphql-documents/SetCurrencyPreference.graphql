@@ -1,0 +1,8 @@
+mutation SetUserCurrencyPrefs($currency: String!, $user: ID!) {
+  updateUser(input:{id: $user, currencyPreference: $currency}) {
+    user {
+      id
+      currencyPreference
+    }
+  }
+}

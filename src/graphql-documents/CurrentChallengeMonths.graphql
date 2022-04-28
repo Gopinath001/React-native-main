@@ -1,0 +1,18 @@
+query CurrentChallengeMonths(
+  $years: [Int]!
+  $closed: Boolean = false
+) {
+  challengeEntries(
+    completedOrClosed: $closed,
+    year_list: $years
+    order: { month: "DESC", year: "DESC" }
+  ) {
+    edges {
+      node {
+        month
+        year
+      }
+    }
+  }
+}
+

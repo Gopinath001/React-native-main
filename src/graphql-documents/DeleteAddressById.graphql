@@ -1,0 +1,7 @@
+mutation DeleteAddressById($id: ID!) {
+  updateUserAddress(input: { id: $id, archived: true }) {
+    userAddress {
+      id
+    }
+  }
+}

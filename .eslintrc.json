@@ -1,0 +1,63 @@
+{
+	"parser":  "@typescript-eslint/parser",
+	"env": {
+		"browser": true,
+		"es6": true,
+		"node": true
+	},
+	"extends": [
+		"plugin:react/recommended",
+		"plugin:prettier/recommended"
+	],
+	"ignorePatterns": "dist",
+	"globals": {
+		"describe": true,
+		"beforeEach": true,
+		"it": true,
+		"expect": true,
+		"test": true
+	},
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
+	"parserOptions": {
+		"ecmaVersion":	2018,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"experimentalObjectRestSpread": true,
+			"jsx": true
+		}
+	},
+	"plugins": [
+		"@typescript-eslint",
+		"react",
+		"prettier"
+	],
+  "overrides": [
+    {
+      "files": ["**/jest.config.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": 0,
+        "@typescript-eslint/explicit-function-return-type": 0
+      }
+    },
+    {
+      "files": ["**/*.spec.ts", "**/*.spec.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": 0
+      }
+    },
+		{
+			"files": ["./tests/e2e.spec.tsx"],
+			"plugins": ["cypress"]
+		}
+  ],
+	"rules": {
+		"prettier/prettier": "error",
+		"react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+		"react/prop-types": 0
+	}
+}

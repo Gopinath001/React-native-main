@@ -1,0 +1,12 @@
+query ChallengeEntryIsProcessed {
+	challengeEntries(order: { month: "DESC", year: "DESC" }) {
+    edges {
+      node {
+        sourceCartEntryLineItem {
+          id
+        }
+      }
+    }
+  }
+}
+

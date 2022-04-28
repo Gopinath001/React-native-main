@@ -1,0 +1,183 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { Logo } from "components/Logo"
+
+<Meta title="API Reference/Containers" />
+
+<Logo />
+<br />
+<br />
+
+# Containers API
+
+All containers in the project stem from a single `GenericContainer`
+component, the reasoning behind this is layout composeability, predictable API and cross platformness (not a real word...)
+
+## All containers
+
+* use a simple API for grid based on flexbox to be cross platform.
+* share the same declarative API for paddings, margins, etc.
+
+## Props
+
+All generic props are detailed [here](http://localhost:6006/?path=/docs/containers-box--box)
+
+----
+
+# Creating a new container
+
+There are two platforms to build containers for, these have *not* been
+abstracted away into a singular API as I ([Dave](https://dav3.co)) didn't want
+to settle on complicated, manual prop mapping of lowest common denominator
+that's hard to maintain. Instead, simple composition and prop passing is used.
+
+## Example
+
+The `Text` container is a good and relatively simple example of this composition
+pattern for containers.
+
+Following the code layout guidelines, the container lives in
+`<package>/src/components/<ComponentName>` and the internal structure looks like
+this
+
+```text
+└── Text
+	├── TextGeneric.tsx
+	├── index.native.tsx
+	├── index.tsx
+	└── types.tsx
+```
+
+There are 4 files that have specific roles.
+
+* `TextGeneric` is a component that handles the prop passing from the platform
+	specific components.
+* `index(?\.[ios,android,native])}.tsx` are the platform specific components
+	that specify platform specific types and props.
+* `types.tsx` as it says contains the types related to these components.
+
+### Text/types.tsx
+
+This is a file to declare your container specific props in, the `Text` component
+only takes a `variant` prop so we export it there.
+
+> the `.tsx` extension is optional, `.ts` will do but I type `.tsx` out of habit
+> and it's more effort than it's generally worth to unlearn that habit.
+
+```typescript
+// Text/types.tsx
+export type TextProps = {
+	variant?:
+		| "h1"
+		| "h2"
+		| "h3"
+		| "h4"
+		| "h5"
+		| "h6"
+		| "paragraph"
+		| "button"
+		| "inline"
+}
+```
+
+### Text/TextGeneric.tsx
+
+This is the platform agnostic layer between the `<Text>` component we consume
+throughout the platform and the final layer before the `GenericContainer`
+component which does other bits and pieces before rendering our component.
+
+A generic component should take a specialization argument to further
+specialize for the targetted platform.
+
+```typescript
+export function TextGeneric<T>(
+						 // ^ specialization here
+	props: GenericContainerPropsWithComponent<TextProps & T>,
+): JSX.Element {
+	const fonts = css({
+		fontSize: fontSizeFromVariant(props.variant),
+	})
+	return <GenericContainer<TextProps> {...props} css={[props.css, fonts]} />
+}
+```
+
+### Text/index.tsx & Text/index.(native|ios|android).tsx
+
+These are your consumables, the way the web config resolves will choose the
+`index.tsx` and the babel config for the mobile app is configured to pick
+`.native` then `.ios` then `.android` and fall back to `.tsx` so you can
+specialize components for platforms safely.
+
+As mentioned above, the `index.tsx` file targets the web, the `GenericContainer`
+component expects a `withComponent` prop and the intrinsic DOM elements
+React/TypeScript ship with aren't _"valid"_ as they're all lowercase. We get
+around this by creating a functional component to pass through the DOM
+component.
+
+The `GenericContainer` also takes a specialization parameter to specialize for
+platforms.
+
+#### Web
+
+```typescript
+// Text/index.tsx
+import { GenericContainerProps } from "../GenericContainer"
+import { TextProps } from "./types"
+import { TextGeneric } from "./TextGeneric"
+
+const P = ({
+	className,
+	children,
+	variant,
+}: GenericContainerProps<TextProps>): JSX.Element => {
+	switch (variant) {
+		case "paragraph":
+		default:
+			return <p >{children}</p>
+		case "h1":
+			return <h1 >{children}</h1>
+		case "h2":
+			return <h2 >{children}</h2>
+		case "h3":
+			return <h3 >{children}</h3>
+		case "h4":
+			return <h4 >{children}</h4>
+		case "h5":
+			return <h5 >{children}</h5>
+	}
+}
+
+export const Text = (props: GenericContainerProps<TextProps>): JSX.Element => {
+	const fonts = css({
+		fontFamily: fontFamilyFromVariant(props.variant),
+	})
+	return (
+		<TextGeneric<HTMLParagraphElement>
+			{...props}
+			withComponent={P}
+			css={[props.css, fonts]}
+		/>
+	)
+}
+```
+
+#### Mobile
+
+```typescript
+import { Text as RNText, ViewProps } from "react-native"
+import { TextProps } from "./types"
+import { TextGeneric } from "./TextGeneric"
+
+export const Text = (
+	props: GenericContainerProps<TextProps & ViewProps>,
+): JSX.Element => (
+	<TextGeneric<ViewProps>
+		{...props}
+		accessibilityRole={accessibilityRoleFromVariant(props.variant)}
+		aria-level={accessibilityLevelFromVariant(props.variant)}
+		css={css({
+			fontFamily: fontFamilyFromVariant(props.variant),
+		})}
+		withComponent={RNText}
+	/>
+)
+```
