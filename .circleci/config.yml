@@ -1,0 +1,429 @@
+version: 2.1
+
+orbs:
+  aws-ecr: circleci/aws-ecr@7.0.0
+  aws-ecs: circleci/aws-ecs@2.2.1
+  ruby: circleci/ruby@1.4.0
+  macos: circleci/macos@2
+  rn: react-native-community/react-native@1.0.0
+  dotenv: anilanar/dotenv@volatile
+
+commands:
+  production-env-test:
+    steps:
+      - run:
+          name: "Get env file"
+          command: |
+            echo $RAP_ENV | base64 -d > ./.env
+      - run:
+          name: Check env is production
+          command: |
+            node -e 'if (require("fs").readFileSync(".env", "utf-8").search(/platform-staging/g) != -1) { console.log("THIS IS STAGING API");process.exit(11)}'
+            node -e 'if (require("fs").readFileSync(".env", "utf-8").search(/raceatyourpace-staging/g) != -1) { console.log("THIS IS STAGING COGNITO");process.exit(11)}'
+  yarn-and-test:
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - node-deps-{{ arch }}-{{ .Branch }}-{{checksum "package.json"}}
+
+      - run:
+          name: Update yarn
+          command: yarn set version latest
+
+      - run:
+          name: install packages
+          command: yarn
+
+      - save_cache:
+          key: node-deps-{{ arch }}-{{ .Branch }}-{{checksum "package.json"}}
+          paths:
+            - ./node_modules
+            - ./.yarn
+            - /usr/local/Cellar
+
+      - run:
+          name: Run Tests
+          command: yarn test
+
+  deploy-staging:
+    steps:
+      - restore_cache:
+          keys:
+            - node-deps-v1-{{ .Branch }}-{{checksum "package.json"}}
+
+      - run:
+          name: Setup env
+          command: |
+            echo 'export TAG=0.9.${CIRCLE_BUILD_NUM}' >> $BASH_ENV
+
+      - aws-ecr/build-and-push-image:
+          checkout: false
+          path: /home/circleci/project
+          dockerfile: ./Dockerfile
+          setup-remote-docker: true
+          remote-docker-version: "20.10.6"
+          account-url: AWS_ECR_ACCOUNT_URL
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          region: AWS_DEFAULT_REGION
+          repo: "frontend"
+          tag: "${TAG},staging"
+
+      - run:
+          name: Update task & service
+          command: |
+            # Create task for docker deploy
+            task_def=$(cat \<<EOF
+            [
+                {
+                    "name": "platform",
+                    "image": "${AWS_ECR_ACCOUNT_URL}/frontend:${TAG}",
+                    "essential": true,
+                    "portMappings": [
+                        {
+                            "containerPort": 3001
+                        }
+                    ],
+                    "memoryReservation": 1024,
+                    "cpu": 1024,
+                    "environment" : [
+                        {
+                            "name": "ENV",
+                            "value": "${STAGING_ENV}"
+                        },
+                        {
+                            "name": "ENV_PATH",
+                            "value": "../../../.env"
+                        },
+                        {
+                            "name": "CORE_API_ROOT",
+                            "value": "${STAGING_CORE_API_ROOT}"
+                        },
+                        {
+                            "name": "CMS_API_ROOT",
+                            "value": "${STAGING_CMS_API_ROOT}"
+                        },
+                        {
+                            "name": "WEB_ROOT_URI",
+                            "value": "${STAGING_WEB_ROOT_URI}"
+                        },
+                        {
+                            "name": "APP_PROTOCOL",
+                            "value": "${STAGING_APP_PROTOCOL}"
+                        },
+                        {
+                            "name": "AWS_REGION",
+                            "value": "${AWS_DEFAULT_REGION}"
+                        },
+                        {
+                            "name": "COGNITO_USER_POOL_ID",
+                            "value": "${STAGING_COGNITO_USER_POOL_ID}"
+                        },
+                        {
+                            "name": "COGNITO_USER_POOL_WEB_ID",
+                            "value": "${STAGING_COGNITO_USER_POOL_WEB_ID}"
+                        },
+                        {
+                            "name": "COGNITO_AUTH_BASE",
+                            "value": "${STAGING_COGNITO_AUTH_BASE}"
+                        },
+                        {
+                            "name": "AWS_CLIENT_ID",
+                            "value": "${STAGING_AWS_CLIENT_ID}"
+                        },
+                        {
+                            "name": "AWS_CLIENT_SECRET",
+                            "value": "${STAGING_AWS_CLIENT_SECRET}"
+                        },
+                        {
+                            "name": "COOKIE_SIGNING_KEY",
+                            "value": "${STAGING_COOKIE_SIGNING_KEY}"
+                        },
+                        {
+                            "name": "BUGSNAG_API_KEY",
+                            "value": "${STAGING_BUGSNAG_API_KEY}"
+                        }
+                    ],
+                    "logConfiguration": {
+                        "logDriver": "awslogs",
+                        "options": {
+                            "awslogs-group": "frontend-staging",
+                            "awslogs-region": "eu-west-2"
+                        }
+                    }
+                }
+            ]
+            EOF
+            )
+
+            echo $task_def
+
+            # Register task definition
+            json=$(aws ecs register-task-definition \
+              --task-role-arn "arn:aws:iam::548948789703:role/ecs-platform" \
+              --requires-compatibilities "EC2" \
+              --container-definitions "$task_def" \
+              --family "frontend-staging")
+
+            # Grab revision # using regular bash and grep
+            revision=$(echo "$json" | grep -o '"revision": [0-9]*' | grep -Eo '[0-9]+')
+
+            # Deploy revision
+            aws ecs update-service \
+               --cluster "platform" \
+               --service "frontend-staging" \
+               --task-definition "frontend-staging":"$revision"
+
+  deploy-production:
+    steps:
+      - restore_cache:
+          keys:
+            - node-deps-v1-{{ .Branch }}-{{checksum "package.json"}}
+
+      - run:
+          name: Setup env
+          command: |
+            echo 'export TAG=0.9.${CIRCLE_BUILD_NUM}' >> $BASH_ENV
+
+      - aws-ecr/build-and-push-image:
+          checkout: false
+          path: /home/circleci/project
+          dockerfile: ./Dockerfile
+          setup-remote-docker: true
+          remote-docker-version: "20.10.6"
+          account-url: AWS_ECR_ACCOUNT_URL
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          region: AWS_DEFAULT_REGION
+          repo: "frontend"
+          tag: "${TAG},production"
+
+      - run:
+          name: Update task & service
+          command: |
+            # Create task for docker deploy
+            task_def=$(cat \<<EOF
+            [
+                {
+                    "name": "platform",
+                    "image": "${AWS_ECR_ACCOUNT_URL}/frontend:${TAG}",
+                    "essential": true,
+                    "portMappings": [
+                        {
+                            "containerPort": 3001
+                        }
+                    ],
+                    "memoryReservation": 1024,
+                    "cpu": 1024,
+                    "environment" : [
+                        {
+                            "name": "ENV",
+                            "value": "${PRODUCTION_ENV}"
+                        },
+                        {
+                            "name": "ENV_PATH",
+                            "value": "../../../.env"
+                        },
+                        {
+                            "name": "CORE_API_ROOT",
+                            "value": "${PRODUCTION_CORE_API_ROOT}"
+                        },
+                        {
+                            "name": "CMS_API_ROOT",
+                            "value": "${PRODUCTION_CMS_API_ROOT}"
+                        },
+                        {
+                            "name": "WEB_ROOT_URI",
+                            "value": "${PRODUCTION_WEB_ROOT_URI}"
+                        },
+                        {
+                            "name": "APP_PROTOCOL",
+                            "value": "${PRODUCTION_APP_PROTOCOL}"
+                        },
+                        {
+                            "name": "AWS_REGION",
+                            "value": "${AWS_DEFAULT_REGION}"
+                        },
+                        {
+                            "name": "COGNITO_USER_POOL_ID",
+                            "value": "${PRODUCTION_COGNITO_USER_POOL_ID}"
+                        },
+                        {
+                            "name": "COGNITO_USER_POOL_WEB_ID",
+                            "value": "${PRODUCTION_COGNITO_USER_POOL_WEB_ID}"
+                        },
+                        {
+                            "name": "COGNITO_AUTH_BASE",
+                            "value": "${PRODUCTION_COGNITO_AUTH_BASE}"
+                        },
+                        {
+                            "name": "AWS_CLIENT_ID",
+                            "value": "${PRODUCTION_AWS_CLIENT_ID}"
+                        },
+                        {
+                            "name": "AWS_CLIENT_SECRET",
+                            "value": "${PRODUCTION_AWS_CLIENT_SECRET}"
+                        },
+                        {
+                            "name": "COOKIE_SIGNING_KEY",
+                            "value": "${PRODUCTION_COOKIE_SIGNING_KEY}"
+                        },
+                        {
+                            "name": "BUGSNAG_API_KEY",
+                            "value": "${PRODUCTION_BUGSNAG_API_KEY}"
+                        }
+                    ],
+                    "logConfiguration": {
+                        "logDriver": "awslogs",
+                        "options": {
+                            "awslogs-group": "frontend-production",
+                            "awslogs-region": "eu-west-2"
+                        }
+                    }
+                }
+            ]
+            EOF
+            )
+
+            echo $task_def
+
+            # Register task definition
+            json=$(aws ecs register-task-definition \
+              --task-role-arn "arn:aws:iam::548948789703:role/ecs-platform" \
+              --requires-compatibilities "EC2" \
+              --container-definitions "$task_def" \
+              --family "frontend-production")
+
+            # Grab revision # using regular bash and grep
+            revision=$(echo "$json" | grep -o '"revision": [0-9]*' | grep -Eo '[0-9]+')
+
+            # Deploy revision
+            aws ecs update-service \
+               --cluster "platform" \
+               --service "frontend-production" \
+               --task-definition "frontend-production":"$revision"
+
+jobs:
+  test:
+    docker:
+      - image: cimg/node:15.1
+    steps:
+      - yarn-and-test
+
+  fastlane-android:
+    docker:
+      - image: cimg/android:2021.12-node
+    resource_class: large
+    steps:
+      - checkout
+      - production-env-test
+      - yarn-and-test
+      - run:
+          name: "Get Google service account config"
+          command: |
+            mkdir -p ~/Downloads/
+            echo $GOOGLE_SERVICE_ACCOUNT_KEY | base64 -d > ~/Downloads/rap-secrets.json
+      - run:
+          name: "Get deployment key"
+          command: |
+            echo $ANDROID_SECURE_KEY | base64 -d > ./android/app/my-upload-key.keystore
+      - ruby/install:
+          version: '2.7'
+      - run:
+          name: install gems
+          command: |
+            gem install bundler fastlane
+      - run:
+          name: Run Fastlane
+          command: |
+            cd android; bundle install && bundle exec fastlane android android
+
+  fastlane-ios:
+    macos:
+      xcode: 12.5.1
+    steps:
+      - checkout
+      - production-env-test
+      - yarn-and-test
+      - run:
+          name: "Get Apple Connect Certificate"
+          command: |
+            mkdir -p ~/Downloads/
+            echo $APPLE_CONNECT_API_P8 | base64 -d > ~/Downloads/Apple-Key.p8
+      - restore_cache:
+          key: brew-deps-{{ arch }}-{{ .Branch }}-v2
+      - run:
+          name: Install gpg
+          command: brew install gnupg gnupg2 cocoapods
+      - save_cache:
+          key: brew-deps-{{ arch }}-{{ .Branch }}-v2
+          paths:
+            - /usr/local/Cellar
+            - ~/.gem/
+      - macos/switch-ruby:
+          version: "2.7"
+      - run:
+          name: install gems
+          command: |
+            gem install bundler
+      - run:
+          name: Bundle install
+          command: |
+            cd ios; bundle install
+      - run:
+          name: Run Fastlane Deployment
+          command: |
+            cd ios; bundle exec fastlane beta
+
+  deploy-staging:
+    docker:
+      - image: circleci/php:8.0-fpm-node-browsers
+      - image: cimg/node:15.1
+    steps:
+      - yarn-and-test
+      - deploy-staging
+
+  deploy-production:
+    docker:
+      - image: circleci/php:8.0-fpm-node-browsers
+      - image: cimg/node:15.1
+    steps:
+      - yarn-and-test
+      - deploy-production
+
+
+workflows:
+  version: 2.1
+
+  apps:
+    jobs:
+      - fastlane-android:
+          context: "RAP Android Deployment"
+          filters:
+              branches:
+                only:
+                  - mobile-staging
+      - fastlane-ios:
+          context: "RAP Android Deployment"
+          filters:
+              branches:
+                only:
+                  - mobile-staging
+
+  deployment:
+    jobs:
+      - deploy-staging:
+          context: "RAYP AWS Credentials"
+          filters:
+              branches:
+                only:
+                  - staging
+
+      - deploy-production:
+          context: "RAYP AWS Credentials"
+          filters:
+            branches:
+              only:
+                  - master
+
